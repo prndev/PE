@@ -1,13 +1,9 @@
 #!/bin/bash
 
-echo "TODO: Generate ImagePack"
-#pushd .\Images\ImagePacks
-#call RebuildImagePack.cmd
-#popd
+echo "Generate ImagePack…"
+make -C Images/ImagePacks
 
-# [Game] Basic Compiler - Linux
-
-# Run the compiler
+echo "Compiling with tweego…"
 tweego/tweego_nix64 -o "PE.html" "src"
 
-echo Done
+echo "Done"
