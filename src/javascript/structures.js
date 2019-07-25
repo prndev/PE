@@ -97,6 +97,11 @@ window.structures={
 	},
 	setupPlayer: function() {
 		var vars = State.active.variables;
+		if (vars.player && typeof vars.player.masturbationType == "number") {
+			// backwards compatibility with non-structured masturbation types
+			// just delete the stored type – it is used for the guardian's reaction only (non-critical)
+			delete vars.player.masturbationType;
+		}
 		vars.player = this.updateStructure(vars.player, window.playerList, "player");
 		vars.player = this.updateStructure(vars.player, window.playerAddonsList, "player");
 		// backwards compatibility for versions without Patreon compliance
@@ -701,7 +706,10 @@ window.playerList={
 	shoppingType: 0,
 	uploadType: 0,
 	checkPlace: 0,
-	masturbationType: 0,
+	masturbationType: { 
+		tool: undefined, /* may be "HorseDildo" "Playgirl" "Porn" "Spycam" "TrainingCock" "VibratorOnAss" "VibratorOnPenis" */
+		orgasm: undefined /* may be "denied" (due to cage), "anal", "penile", "unable" (due to PDS) */
+	}, 
 	buttplugInflate: 0,
 	alarmProgress: 0,
 	bjDildoProgress: 0,
@@ -840,15 +848,21 @@ window.playerAddonsList={
 		ending: -1,
 	},
 	masturbate: {
-		lastDay: 0,
-		lastHour: 0,
-		lastMinute: 0,
-		DayTemp: 0,
-		HourTemp: 0,
-		MinuteTemp: 0,
-		DayTease: 0,
-		HourTease: 0,
-		MinuteTease: 0
+		last : {
+			day: 0,
+			hour: 0,
+			minute: 0
+		},
+		temp : {
+			day: 0,
+			hour: 0,
+			minute: 0
+		},
+		tease : {
+			day: 0,
+			hour: 0,
+			minute: 0
+		}
 	},
 	exp: {
 		crossdressingExp: 0,
@@ -1457,6 +1471,7 @@ window.flagsList={
 	punConsent: false,
 	permConsent: false,
 	postConPassage: "",
+	playerChoseChastity: false, // whether PC eagerly chose to wear the chastity cage (non-blackmail route)
 },
 
 window.kinkList={
