@@ -40,9 +40,9 @@
 			<<updateClothes>>\
 		<<endif>>\
 
-		<<if $player.perversion.guardianCooldown gt 1>>\
+		<<if $player.perversion.guardianCooldown gt 1 and not $minigames.dreamgame.playedToday>>\
 			First, you clean and iron $guardian's clothes for the day, then you prepare fresh towels for the bathroom and go to her bedroom.\
-			There, you wake her up by gently rubbing her feet, just how she likes.\
+			There, you wake her up by gently rubbing her feet, just how she likes. Alternatively, you could wake her up [[sensually|Dream game maid][window.dreamMinigame.reset()]].\
 			<<if $player.perversion.guardian gte 7>>\
 				You slowly massage her and help her dress as she gets up. Then, you walk her to the bathroom and treat her like an empress, tending to her every whim. You help her wash, cleaning her gently with a soft cloth, until she sends you off to prepare breakfast.
 			<<endif>>\
@@ -292,6 +292,7 @@
 				
 			<<removeFromInv 'alarmClock'>>\
 		<<endif>>\
+		<<set $minigames.dreamgame.playedToday to false>>\
 	<!--</regular start>*********************-->\
 	<<endif>>\
 \
