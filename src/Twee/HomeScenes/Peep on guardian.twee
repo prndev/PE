@@ -39,10 +39,4 @@
 	<<endif>>\
 <<endif>>\
 	<!--</clothes check for guardian>-->\
-You walk as quietly as you can to $guardian's room and open the door. Her gentle, deep breathing assures you she's asleep. It's difficult to see in here.
-<<set window.dreamMinigame.reset()>>\
-<<set $minigames.dreamgame.playedToday to true>>\
 <<display [[Dream game]]>>\
-\
-
-

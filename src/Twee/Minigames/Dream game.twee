@@ -1,5 +1,9 @@
 :: Dream game [pos_1908_0]
-\
+
+<<if not $minigames.dreamgame.playedToday>>\
+	You walk as quietly as you can to $guardian's room and open the door. Her gentle, deep breathing assures you she's asleep. It's difficult to see in here.
+	<<set $minigames.dreamgame.playedToday to true>>\
+<<endif>>\
 <<if window.dreamMinigame.isAwake()>>\
 	<<if $player.alarmClockGuardian and ($time.hour gt $time.guardian.wakeHour or ($time.hour eq $time.guardian.wakeHour and $time.minute gte $time.guardian.wakeMinute))>>\
 		A shrill beeping startles you, and you realize $guardian's alarm clock is going off.  You quickly duck out of the bedroom before she opens her eyes.
