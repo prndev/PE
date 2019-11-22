@@ -37,16 +37,8 @@ window.structures={
 		for (var prop in addon) {
 			if (addon.hasOwnProperty(prop)) {
 				if (typeof addon[prop] === 'object') {
-					if (Array.isArray(addon[prop])){
-						base[prop] = addon[prop];
-					}
-					else if (addon[prop] === null){
-						base[prop] = addon[prop];
-					}
-					else{
-						//console.log(`Descending into ${debugPrefix}.${prop}…`);
-						base[prop] = this.updateStructure(base[prop], addon[prop], debugPrefix+'.'+prop);
-					}
+					//console.log(`Descending into ${debugPrefix}.${prop}…`);
+					base[prop] = this.updateStructure(base[prop], addon[prop], debugPrefix+'.'+prop);
 				} else if (!base.hasOwnProperty(prop)) {
 					//console.log(`Setting up ${debugPrefix}.${prop}…`);
 					base[prop] = addon[prop];
@@ -88,9 +80,9 @@ window.structures={
 		State.active.variables.gameVersion = window.gameCode.version;
 	},
 	setupPlayer: function() {
-		var vars = State.active.variables;
-		vars.player = this.updateStructure(vars.player, window.playerList, "player");
-		vars.player = this.updateStructure(vars.player, window.playerAddonsList, "player");
+		var vars=State.active.variables;
+		this.updateStructure(vars.player, window.playerList, "player");
+		this.updateStructure(vars.player, window.playerAddonsList, "player");
 	},
 	setupStandaloneVars: function() {
 		var vars=State.active.variables;
@@ -470,8 +462,7 @@ window.structures={
 	},
 	
 	setupFriendRiddles: function() {
-		var vars = State.active.variables;
-		vars.friendRiddles = this.updateStructure(vars.friendRiddles, window.friendRiddles, "friendRiddles");
+		this.updateStructure(State.active.variables.friendRiddles, window.friendRiddles, "friendRiddles");
 	},
 	
 	setupTalks: function() {
@@ -677,18 +668,15 @@ window.structures={
 		}
 	},
 	setupCheer: function (){
-		var vars = State.active.variables;
-		vars.cheerleaders = this.updateStructure(vars.cheerleaders, window.cheerList, "cheerleaders");
+		this.updateStructure(State.active.variables.cheerleaders, window.cheerList, "cheerleaders");
 	},
 	
 	setupCheerFriend: function () {
-		var vars = State.active.variables;
-		vars.cheerFriend = this.updateStructure(vars.cheerFriend, window.cheerFriendList, "cheerFriend");
+		this.updateStructure(State.active.variables.cheerFriend, window.cheerFriendList, "cheerFriend");
 	},
 	
 	setupTeam: function () {
-		var vars = State.active.variables;
-		vars.team = this.updateStructure(vars.team, window.teamList, "team");
+		this.updateStructure(State.active.variables.team, window.teamList, "team");
 	},
 },
 
@@ -893,18 +881,15 @@ window.playerAddonsList={
 		
 		comportment:  {
 			classStatus: [0, 0], 	/*ettiquite, poise; 
-									0 = not started, 1 = active, 2 = on hold, 3 = penalty class, 4 = passed, 5 = failed*/
+									0 = not started, 1 = active, 2 = on hold, 3 = passed*/
 			etiquette:  {
 				progress: 0,
-				lessonFail:[0,0,0],
-				partyRepeat: false,
-				partyStart: false,
-				voicePunish: false,
+				class1Fail: false,
+				class2Fail: false,
+				class3Fail: false,
 			},
 			poise:	{
 				progress:0,
-				lessonFail: [0,0,0],
-				
 			},
 		},
 	},
@@ -975,7 +960,6 @@ window.friendList={
 	bonusDress: 0,
 	parkAttempt: 0,
 	parkFail: 0,
-	seenDressUp: 0,
 },
 
 window.futaList={
@@ -1349,6 +1333,7 @@ window.flagsList={
 	healthSocks: false,
 	girlPants: false,
 	partyEars: false,
+	playerChoseChastity: false, // whether PC eagerly chose to wear the chastity cage (non-blackmail route)
 },
 
 window.kinkList={
@@ -1560,8 +1545,6 @@ window.cheerList={
 		prankBeg: false,	//PC begs for mercy to end prank
 		prank1Finish: false, //PC completed tryout prank 
 		prank2: false,	//controls access to gym prank
-		guardianPractice: false, //allows player to practice cheerleading with guardian
-		dancePractice: false, //allows player to practice dancing
 
 		//notice body mods flags for cheer captain and cheer friend 
 		//in cheer arc, both trigger off the same set of variables
