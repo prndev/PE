@@ -86,8 +86,16 @@ You are on maid wakeup duty.\
 		<<else>>\
 			@@.guardian;Since@@\
 		<<endif>>\
-		@@.guardian;you are unwilling to satisfy me, you are not getting any relief, either. I am taking away your vibrator. Dismissed."@@\
-		<<set $flags.confiscatedVibrator to true>>\
+		@@.guardian;you are unwilling to satisfy me, you are not getting any relief, either.@@\
+		<<if playerCode.owns(itemsC.vibrator)>>\
+			<<if $flags.confiscatedVibrator>>\
+				@@.guardian;I already confiscated your vibrator. Better learn how to wake me properly if you ever want to have it back.@@\
+			<<else>>\
+				@@.guardian;I am taking away your vibrator."@@\
+			<<set $flags.confiscatedVibrator to true>>\
+			<<endif>>\
+		<<endif>>\
+		@@.guardian;Dismissed."@@\
 		<<set $player.masturbationType = 0>> /* after this incident, guardian should not mention filmed masturbation during breakfast */
 	<<endif>>\
 	
