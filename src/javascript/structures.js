@@ -68,6 +68,7 @@ window.structures={
 		// Custom versonControl script
 		// BUG - for some reason setupFriend conflicts with setupQuickSlot
 		this.setupPlayer();
+		this.setupInventory();
 		this.setupStandaloneVars();
 		this.setupClothesCheck();
 		this.setupMinigameVars();
@@ -98,6 +99,11 @@ window.structures={
 		var vars = State.active.variables;
 		vars.player = this.updateStructure(vars.player, window.playerList, "player");
 		vars.player = this.updateStructure(vars.player, window.playerAddonsList, "player");
+	},
+	setupInventory: function() {
+		var player = State.active.variables.player;
+		player.clothes.forEach(c => player.inventory[c] = {equipped: true})
+		//delete player.clothes;
 	},
 	setupStandaloneVars: function() {
 		var vars=State.active.variables;
@@ -758,6 +764,7 @@ window.playerList={
 	tuitionIncrease: 10,
 	friendLastVisit: 0,
 	clothes: [],
+	inventory: {},
 	clothesTmp: null,
 	gameSkill: 0,
 	fitness: 0,

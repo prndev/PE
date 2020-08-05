@@ -1,16 +1,15 @@
 window.playerCode={	
 	isWearing: function(item) {
-		return State.active.variables.player.clothes.indexOf(item.id) >= 0;
+		/* this is used almost never */
+		/* TODO: test this */
+		//alert("TODO");
+		console.log("isWearing", item);
+		return window.inventoryCode.getItem(i => item && i.id === item.id && i.equipped) || false;
 	},
-	isWearingOn: function(type) {
-		for (var j=0; j < State.active.variables.player.clothes.length; j++) {
-			var o=window.itemsC[State.active.variables.player.clothes[j]];
-			if (o && ((o.clothingType & type) > 0)) {
-				return o;
-			}
-		}
-		
-		return false;
+	isWearingOn: function(typeid) {
+		// TODO: this should be named getEquippedItemByType
+		let typename = Object.entries(window.itemTypes).find(([name, value]) => value === typeid)[0];
+		return window.inventoryCode.getItem(i => i[typename] && i.equipped) || false;
 	},
 	getNaked: function() {
 		var c=this.isWearingOn(window.itemTypes.Chastity);
