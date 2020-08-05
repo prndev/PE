@@ -31,6 +31,7 @@ window.structures={
 	updateStructure: function(base, addon, debugPrefix) {
 		// adapted from https://stackoverflow.com/questions/14843815/#29563346
 		// TODO: use this consistently to update all structures
+		let log = (msg) => {}; // console.log
 		if (base === undefined) {
 			base = {};
 		}
@@ -40,24 +41,24 @@ window.structures={
 					if (Array.isArray(addon[prop])) {
 						if (base[prop] === undefined) {
 							if (addon[prop].some(e => typeof e === 'object')) {
-								console.log(`WARNING: Array ${debugPrefix}.${prop} contains at least one object!`);
+								log(`WARNING: Array ${debugPrefix}.${prop} contains at least one object!`);
 							}
-							console.log(`Setting up array ${debugPrefix}.${prop}…`);
+							log(`Setting up array ${debugPrefix}.${prop}…`);
 							base[prop] = addon[prop];
 						} else {
-							console.log(`Array ${debugPrefix}.${prop} already exists:`, base[prop]);
+							log(`Array ${debugPrefix}.${prop} already exists:`, base[prop]);
 						}
 					} else if (addon[prop] === null) {
 						base[prop] = addon[prop];
 					} else{
-						console.log(`Descending into ${debugPrefix}.${prop}…`);
+						log(`Descending into ${debugPrefix}.${prop}…`);
 						base[prop] = this.updateStructure(base[prop], addon[prop], debugPrefix+'.'+prop);
 					}
 				} else if (!base.hasOwnProperty(prop)) {
-					console.log(`Setting up ${debugPrefix}.${prop}…`);
+					log(`Setting up ${debugPrefix}.${prop}…`);
 					base[prop] = addon[prop];
 				} else {
-					console.log(`${debugPrefix}.${prop} already exists:`, base[prop]);
+					log(`${debugPrefix}.${prop} already exists:`, base[prop]);
 				}
 			}
 		}
