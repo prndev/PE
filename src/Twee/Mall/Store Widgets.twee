@@ -155,10 +155,13 @@
 <<if window.timeCode.isMallOpen()>>\
 Which shop would you like to visit?
 <div class="clothesDivider"></div>\
-<<for _i=0; _i lt window.stores.length; _i++>>\
-	<<if window.stores[_i].daringRequired lte $player.daring>>\
-		<<print '<<click "' + window.stores[_i].name + '">><<replace "#mall">><<itemSelector ' + _i + '>><</replace>><<set $time.addMinutes(5)>><<updateTime>><</click>>'>>
-	<<endif>>\
+
+Have all the items in the world diectly accessible for debugging purposes:
+<<set _itemids = Object.keys(window.items) >>\
+<<for _i to 0; _i lt _itemids.length; _i++>>\
+	<<set _item = window.items[_itemids[_i]] >>\
+	<<print '<<link _item.name>><<addToInv '+_item.id+'>><</link>>'>>
+	
 <</for>>\
 <div class="clothesDivider"></div>\
 <<showMallPlaces>>
