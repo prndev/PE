@@ -1,0 +1,5 @@
+:: StoryRightSidebar [nobr]
+
+<span id="clothing_wardrobe">
+<<display "Clothing wardrobe">>
+</span>
