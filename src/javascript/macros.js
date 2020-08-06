@@ -340,27 +340,6 @@ macros.showClothingImageSidebar = {
 	}
 };
 
-macros.showImageSidebar = {
-  handler: function(place, macroName, params, parser) {
-		if (state.active.variables.showimages) {
-			var cl="clothing_image_sidebar_";
-			if (params[2]) {
-				if (params[2]==1) { cl="clothing_image_small_sidebar_" }
-				if (params[2]==2) { cl="clothing_image_small_sidebar_top_" }
-			}
-			if (params[1]==100) {
-				new Wikifier(place, '<img src="Images/items/' + params[0] +'" class="'+ cl + params[3] +'">');
-			} else {
-				if (params[1]>9) {
-					new Wikifier(place, '<img src="Images/items/' + params[0] + params[1] +'.jpg" class="'+ cl + params[3] + '">');
-				} else {
-					new Wikifier(place, '<img src="Images/items/' + params[0] + '0' + params[1] +'.jpg" class="'+ cl + params[3] +'">');
-				}
-			}
-		}
-	}
-};
-
 macros.showRoomImage = {
   handler: function(place, macroName, params, parser) {
 		if (state.active.variables.bedroomRender) {
