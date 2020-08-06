@@ -762,6 +762,11 @@ Perverted Education
 	padding-bottom: 5px;
 }
 
+.inventory img {
+	max-width: 10%;
+	max-height: 10%;
+}
+
 .clothing_image_sidebar_0 {
 	border: 1px Solid #404040;
 	width: 44%;

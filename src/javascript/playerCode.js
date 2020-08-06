@@ -5,16 +5,16 @@ window.playerCode={
 	},
 	isWearingOn: function(typeid) {
 		// TODO: this should be named getEquippedItemByType
-		let item = this.owns(typeid);
-		return item && item.equipped;
+		let typename = Object.entries(window.itemTypes).find(([name, value]) => value === typeid)[0];
+		return window.inventoryCode.getItem(i => i[typename] && i.equipped);
 	},
 	getNaked: function() {
-		var c=this.isWearingOn(window.itemTypes.Chastity);
-		var player=State.active.variables.player;
-		player.clothes=[];
-		if (c && (State.active.variables.flags.chastityKey || State.active.variables.flags.chastityLocked)) {
-			player.clothes.push(c.id);
-		}
+		let equippedItems = window.inventoryCode.getItems(i => i.equipped);
+		equippedItems.forEach(i => {
+			if (!i.Chastity || !State.active.variables.flags.chastityLocked) {
+				window.inventoryCode.unequipItem(i.id);
+			}
+		});
 	},
 	masturbate: {
 		isReady: function() {
