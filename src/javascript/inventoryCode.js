@@ -15,7 +15,9 @@ window.inventoryCode = {
     },
     equipItem : function(itemid) {
         let inventory = State.active.variables.player.inventory;
-        inventory[itemid].equipped = true;
+        if (! window.itemsC[itemid].NotClothing) {
+            inventory[itemid].equipped = true;
+        }
     },
     unequipItem : function(itemid) {
         let inventory = State.active.variables.player.inventory;
