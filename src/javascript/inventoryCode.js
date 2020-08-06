@@ -3,7 +3,7 @@ window.inventoryCode = {
         //console.log(`getItems(${predicate})`, predicate);
         let inventory = State.active.variables.player.inventory;
         let ownedItems = Object.entries(inventory).map(
-            ([itemid, item]) => Object.assign({}, window.items[itemid], item)
+            ([itemid, item]) => Object.assign({}, window.itemsC[itemid], item)
         );
         let result = ownedItems.filter(predicate);
         //console.log(result);
