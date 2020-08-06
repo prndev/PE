@@ -2,8 +2,11 @@
 \
 Quick Access Styles:
 <<for _quickSlot range $inventory.quickSlots>>\
-	<<print '<<link _quickSlot.name>><<run playerCode.quickSlotSelect("'+_quickSlot.name+'")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>>'>>
-
+	<<set _ownedItems = inventoryCode.getItems(i => _quickSlot.itemids.includes(i.id))>>\
+	/* check whether payer owns all items mentioned in quick slot */\
+	<<if _ownedItems.length >= _quickSlot.itemids.length >>\
+		<<print '<<link _quickSlot.name>><<run playerCode.quickSlotSelect("'+_quickSlot.name+'")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>>'>>
+	<<endif>>\
 <<endfor>>\
 
 [[Check yourself][$player.checkPlace=0]] @@.inv_action_faded;-@@ [[Check your room|Check bedroom][$player.checkPlace=0]]
