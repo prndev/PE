@@ -102,6 +102,9 @@ window.structures={
 	},
 	setupInventory: function() {
 		var player = State.active.variables.player;
+		if (State.active.variables.inventory) { // this is only available when loading a save
+			State.active.variables.inventory.forEach(c => player.inventory[c] = {})
+		}
 		player.clothes.forEach(c => player.inventory[c] = {equipped: true})
 		delete player.clothes;
 	},
