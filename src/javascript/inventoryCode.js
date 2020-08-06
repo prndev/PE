@@ -30,5 +30,5 @@ window.inventoryCode = {
         } else {
             this.equipItem(itemid);
         }
-    }
+    },
 };

@@ -1,5 +1,11 @@
 :: Clothing Selector [pos_1276_820]
 \
+Quick Access Styles:
+<<for _quickSlot range $inventory.quickSlots>>\
+	<<print '<<link _quickSlot.name>><<run playerCode.quickSlotSelect("'+_quickSlot.name+'")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>>'>>
+
+<<endfor>>\
+
 [[Check yourself][$player.checkPlace=0]] @@.inv_action_faded;-@@ [[Check your room|Check bedroom][$player.checkPlace=0]]
 \
 <<if (not $flags.walletForgottenEnd) and window.timeCode.isMonday() and ($flags.walletForgottenStart or ($player.perversion.teacher gte 3 and (not $flags.sissyConfession) and random(20) eq 0))>>\

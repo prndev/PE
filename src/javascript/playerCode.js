@@ -382,37 +382,11 @@ window.playerCode={
 		let typename = Object.entries(window.itemTypes).find(([name, value]) => value === typeid)[0];
 		return window.inventoryCode.getItem(i => i[typename]);
 	},
-	saveQuickSlot: function(slot) {
-		var player=State.active.variables.player;
-		var itemsC=window.itemsC;
-		var items=State.active.variables.items;
-		if ((player.clothes.length == 0) || ((player.clothes.length == 1) && (this.isWearingOn(window.itemTypes.Chastity)))) {
-			this.deleteQuickSlot(slot);
-			return;
-			}
-			
-		var quickS=State.active.variables.quickSlot;
-		var quick=quickS[Object.keys(quickS)[slot]];
-		
-		quick.types=[];
-		quick.clothes=[];
-		
-		for (var i=0; i < player.clothes.length; i++) {
-			var c=player.clothes[i];
-			for (var j=0; j < Object.keys(itemsC).length; j++) {
-				var o=itemsC[Object.keys(itemsC)[j]];
-				var oV=items[Object.keys(itemsC)[j]];
-				if (this.owns(o) && (o.id == c) && (o.clothingType != window.itemTypes.Chastity)) {
-					quick.clothes.push(o.id);
-					var t=0;
-					if (o.maxAlt) {
-						t=oV.curAlt;
-					}
-					quick.types.push(t);
-				}
-			}
-		}
-	},
+    quickSlotSelect : function(quickSlotName) {
+        this.getNaked();
+        let quickSlots = State.active.variables.inventory.quickSlots;
+        quickSlots.find(qs => qs.name === quickSlotName).itemids.forEach(iid => window.inventoryCode.equipItem(iid));
+    },
 	wearClothesJS: function(id) {
 		if (!id) {
 			return;
@@ -490,57 +464,6 @@ window.playerCode={
 				this.removeClothesJS('cheerBriefs');
 			}
 		}
-	},
-	deleteQuickSlot: function(slot) {
-		var quickS=State.active.variables.quickSlot;
-		var max=Object.keys(quickS).length - slot;
-
-		for (var i=0; i < max; i++) {
-			var n=slot+i;
-			var n2=slot+i+1;
-			if (n2 >= State.active.variables.quickSlot.length) {
-				quickS[Object.keys(quickS)[n]].types=[];
-				quickS[Object.keys(quickS)[n]].clothes=[];
-				return;
-			}
-			if ((quickS[Object.keys(quickS)[n2]].clothes.length == 0) || (!quickS[Object.keys(quickS)[n2]].extra)) {
-				quickS[Object.keys(quickS)[n]].types=[];
-				quickS[Object.keys(quickS)[n]].clothes=[];
-				return;
-			}
-			quickS[Object.keys(quickS)[n]].name=quickS[Object.keys(quickS)[n2]].name;
-			quickS[Object.keys(quickS)[n]].types=quickS[Object.keys(quickS)[n2]].types;
-			quickS[Object.keys(quickS)[n]].clothes=quickS[Object.keys(quickS)[n2]].clothes;
-		}
-	},
-	loadQuickSlot: function(slot) {
-		var ch=this.isWearingOn(window.itemTypes.Chastity);
-		var itemsC=window.itemsC;
-		var items=State.active.variables.items;
-		var player=State.active.variables.player;
-		player.clothes=[];
-		if (ch) {
-			player.clothes.push(ch.id);
-		}
-		
-		var quickS=State.active.variables.quickSlot;
-		var quick=quickS[Object.keys(quickS)[slot]];
-		
-		for (var i=0; i < quick.clothes.length; i++) {
-			var c=quick.clothes[i];
-			for (var j=0; j < Object.keys(itemsC).length; j++) {
-				var o=itemsC[Object.keys(itemsC)[j]];
-				var oV=items[Object.keys(itemsC)[j]];
-				if (this.owns(o) && (o.id == c) && (o.clothingType != window.itemTypes.Chastity)) {
-					player.clothes.push(c);
-					if (o.maxAlt) {
-						oV.curAlt=quick.types[i];
-					}
-				}
-			}
-		}
-		
-		window.playerCode.clothesOverride();
 	},
 	wearPajamas: function() {
 		var c=this.isWearingOn(window.itemTypes.Chastity);

@@ -66,7 +66,6 @@ window.structures={
 	},
 	updateStructures: function() {
 		// Custom versonControl script
-		// BUG - for some reason setupFriend conflicts with setupQuickSlot
 		this.setupPlayer();
 		this.setupInventory();
 		this.setupStandaloneVars();
@@ -79,7 +78,6 @@ window.structures={
 		this.setupBody();
 		this.setupFriend();
 		this.setupFuta();
-		this.setupQuickSlot();
 		this.setupItems();
 		this.setupChores();
 		this.setupDreams();
@@ -101,12 +99,13 @@ window.structures={
 		vars.player = this.updateStructure(vars.player, window.playerAddonsList, "player");
 	},
 	setupInventory: function() {
-		var player = State.active.variables.player;
-		if (State.active.variables.inventory) { // this is only available when loading a save
-			State.active.variables.inventory.forEach(c => player.inventory[c] = {})
+		var vars = State.active.variables;
+		if (vars.inventory && Array.isArray(vars.inventory)) { // this is only available when loading a save
+			vars.inventory.forEach(c => player.inventory[c] = {});
+			delete vars.inventory;
 		}
-		player.clothes.forEach(c => player.inventory[c] = {equipped: true})
-		delete player.clothes;
+		vars.player.clothes.forEach(c => vars.player.inventory[c] = {equipped: true})
+		delete vars.player.clothes;
 	},
 	setupStandaloneVars: function() {
 		var vars=State.active.variables;
@@ -141,7 +140,18 @@ window.structures={
 		
 		if (vars.activeChore == null) { vars.activeChore = 0; }
 		
-		if (vars.inventory == null) { vars.inventory = []; } // TODO INVENTORY
+		if (!vars.inventory || Array.isArray(vars.inventory)) {
+			// $inventory shall now hold inventory data for the player / game mechanics, not the items the player character owns – that is now $player.inventory which is never to be accessed directly
+			vars.inventory = { 
+				quickSlots : [ 
+					{ name : "School", itemids : ['schoolMale', 'jocksLucky', 'schoolShoes'] },
+					{ name : "Casual", itemids : ['casualMale', 'jocksLucky', 'sneakers'] },
+					{ name : "Nightwear", itemids : ['pyjamasMale'] },
+					{ name : "Maid", itemids : ['maidOutfit'] },
+					{ name : "Cheerleader", itemids : ['rookieUniform', 'cheerBriefs', 'cheerSneakers', 'socks', 'hairbow'] }
+				]
+			};
+		}
 		
 		if (vars.reason == null) { vars.reason = {}; }
 
@@ -275,29 +285,6 @@ window.structures={
 		for (var i=0; i < Object.keys(futaList).length; i++) {
 			if (State.active.variables.futa[Object.keys(futaList)[i]] == null) {
 				State.active.variables.futa[Object.keys(futaList)[i]] = futaList[Object.keys(futaList)[i]];
-			}
-		}
-	},
-	setupQuickSlot: function() {
-		var slotList=window.quickSlotList;
-		if (State.active.variables.quickSlot == null) {
-			State.active.variables.quickSlot = {};
-		}
-		for (var i=0; i < Object.keys(slotList).length; i++) {
-			if (State.active.variables.quickSlot[Object.keys(slotList)[i]] == null) {
-				State.active.variables.quickSlot[Object.keys(slotList)[i]] = {};
-			}
-			if (State.active.variables.quickSlot[Object.keys(slotList)[i]].name == null) {
-				State.active.variables.quickSlot[Object.keys(slotList)[i]].name = slotList[Object.keys(slotList)[i]].name;
-			}
-			if (State.active.variables.quickSlot[Object.keys(slotList)[i]].extra == null) {
-				State.active.variables.quickSlot[Object.keys(slotList)[i]].extra = slotList[Object.keys(slotList)[i]].extra;
-			}
-			if (State.active.variables.quickSlot[Object.keys(slotList)[i]].clothes == null) {
-				State.active.variables.quickSlot[Object.keys(slotList)[i]].clothes = [];
-			}
-			if (State.active.variables.quickSlot[Object.keys(slotList)[i]].types == null) {
-				State.active.variables.quickSlot[Object.keys(slotList)[i]].types = [];
 			}
 		}
 	},
@@ -1548,93 +1535,6 @@ window.kinkList={
 
 	genderChangeStarted: false,
 	genderChange: false
-},
-
-window.quickSlotList={
-	School: {
-	name: "School",
-	extra: false
-	},
-	School_b: {
-	name: "School b",
-	extra: true
-	},
-	School_c: {
-	name: "School c",
-	extra: true
-	},
-	Casual: {
-	name: "Casual",
-	extra: false
-	},
-	Casual_b: {
-	name: "Casual b",
-	extra: true
-	},
-	Casual_c: {
-	name: "Casual c",
-	extra: true
-	},
-	Slutty: {
-	name: "Slutty",
-	extra: false
-	},
-	Slutty_b: {
-	name: "Slutty b",
-	extra: true
-	},
-	Slutty_c: {
-	name: "Slutty c",
-	extra: true
-	},
-	Nightwear: {
-	name: "Nightwear",
-	extra: false
-	},
-	Maid: {
-	name: "Maid",
-	extra: false
-	},
-	Cheerleader: {
-	name: "Cheerleader",
-	extra: false
-	},
-	Custom: {
-	name: "Custom",
-	extra: false
-	},
-	Custom_a: {
-	name: "Custom a",
-	extra: true
-	},
-	Custom_b: {
-	name: "Custom b",
-	extra: true
-	},
-	Custom_c: {
-	name: "Custom c",
-	extra: true
-	},
-	Custom_d: {
-	name: "Custom d",
-	extra: true
-	},
-	Custom_e: {
-	name: "Custom e",
-	extra: true
-	},
-	Custom_f: {
-	name: "Custom f",
-	extra: true
-	},
-	Custom_g: {
-	name: "Custom g",
-	extra: true
-	},
-	Custom_h: {
-	name: "Custom h",
-	extra: true
-	}
 },
 
 window.cheerList={
