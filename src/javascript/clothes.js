@@ -155,12 +155,12 @@ window.clothes={
 			var hairband=playerCode.isWearingOn(itemTypes.Hairband);
 			var earrings=playerCode.isWearingOn(itemTypes.Earrings);
 			var extras=playerCode.isWearingOn(itemTypes.Extra);
-			if (outerwear.sleepWear) {
-				State.active.variables.reason.dressedOutside="You can't wear sleepwear outside";
-				return false;
-			}
 			if (!outerwear) {
 				State.active.variables.reason.dressedOutside="You have to wear clothing outside";
+				return false;
+			}
+			if (outerwear.sleepWear) {
+				State.active.variables.reason.dressedOutside="You can't wear sleepwear outside";
 				return false;
 			}
 			if (!shoes) {
@@ -232,8 +232,8 @@ window.clothes={
 			var underwear=playerCode.isWearingOn(itemTypes.Underwear);
 			var outerwear=playerCode.isWearingOn(itemTypes.Outerwear);
 			var shoes=playerCode.isWearingOn(itemTypes.Shoes);
-			if (!window.clothes.checkUnderwear()) {
-				State.active.variables.reason.dressedFriend="You don't feel daring enough for " + (underwear ? "that" : "no") + " underwear";
+			if (!outerwear) {
+				State.active.variables.reason.dressedFriend="You have to wear clothing outside";
 				return false;
 			}
 			if (outerwear.sleepWear) {
@@ -244,8 +244,8 @@ window.clothes={
 				State.active.variables.reason.dressedFriend="You have to wear shoes outside";
 				return false;
 			}
-			if (!outerwear) {
-				State.active.variables.reason.dressedFriend="You have to wear clothing outside";
+			if (!window.clothes.checkUnderwear()) {
+				State.active.variables.reason.dressedFriend="You don't feel daring enough for " + (underwear ? "that" : "no") + " underwear";
 				return false;
 			}
 			if (State.active.variables.player.daring < window.daringValues.daringClothesFemale) {
@@ -284,7 +284,7 @@ window.clothes={
 			var hairband=playerCode.isWearingOn(itemTypes.Hairband);
 			var earrings=playerCode.isWearingOn(itemTypes.Earrings);
 			var extras=playerCode.isWearingOn(itemTypes.Extra);
-			if (!window.clothes.dressedOutside.check(0)) {
+			if (!window.clothes.dressedOutside.check()) {
 				return false;
 			}
 			if (!outerwear.school) {
