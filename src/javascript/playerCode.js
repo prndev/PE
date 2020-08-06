@@ -1,15 +1,12 @@
 window.playerCode={	
 	isWearing: function(item) {
 		/* this is used almost never */
-		/* TODO: test this */
-		//alert("TODO");
-		console.log("isWearing", item);
 		return window.inventoryCode.getItem(i => item && i.id === item.id && i.equipped) || false;
 	},
 	isWearingOn: function(typeid) {
 		// TODO: this should be named getEquippedItemByType
-		let typename = Object.entries(window.itemTypes).find(([name, value]) => value === typeid)[0];
-		return window.inventoryCode.getItem(i => i[typename] && i.equipped) || false;
+		let item = this.owns(typeid);
+		return item && item.equipped;
 	},
 	getNaked: function() {
 		var c=this.isWearingOn(window.itemTypes.Chastity);
@@ -379,19 +376,11 @@ window.playerCode={
 		player.tuitionIncrease = 30*State.active.variables.flags.tuitionFactor;
 	},
 	owns: function(item) {
-		return State.active.variables.inventory.indexOf(item.id) >= 0;
+		return window.inventoryCode.getItem(i => item && i.id === item.id);
 	},
 	ownsType: function(clothingType) {
-		var items=window.itemsC;
-		for (var j=0; j < Object.keys(items).length; j++) {
-			o=items[Object.keys(items)[j]];
-			if ((o.clothingType & clothingType) > 0) {
-				if (State.active.variables.inventory.indexOf(o.id) >= 0) {
-					return true;
-				}
-			}
-		}
-		return false;
+		let typename = Object.entries(window.itemTypes).find(([name, value]) => value === typeid)[0];
+		return window.inventoryCode.getItem(i => i[typename]);
 	},
 	saveQuickSlot: function(slot) {
 		var player=State.active.variables.player;

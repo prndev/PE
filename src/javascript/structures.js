@@ -103,7 +103,7 @@ window.structures={
 	setupInventory: function() {
 		var player = State.active.variables.player;
 		player.clothes.forEach(c => player.inventory[c] = {equipped: true})
-		//delete player.clothes;
+		delete player.clothes;
 	},
 	setupStandaloneVars: function() {
 		var vars=State.active.variables;
@@ -138,7 +138,7 @@ window.structures={
 		
 		if (vars.activeChore == null) { vars.activeChore = 0; }
 		
-		if (vars.inventory == null) { vars.inventory = []; }
+		if (vars.inventory == null) { vars.inventory = []; } // TODO INVENTORY
 		
 		if (vars.reason == null) { vars.reason = {}; }
 

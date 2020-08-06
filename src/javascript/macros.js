@@ -1,23 +1,4 @@
-//:: Story JavaScript [script]
 // Begin Inventory Macros
-// Original macros by F2Andy: http://strugglingwithtwine.blogspot.ca/2014/03/handling-inventory.html
-//
-// Instructions:
-//
-// 1. In a passage, check if there's an item in the inventory...
-// ...if not, give the user the option to link to a passage that adds it to inventory:
-// <<if $inventory.indexOf("An Unsigned Note") == -1>>There is a note here. [[Pick up the note.]]<<endif>>
-//
-// 2. In a passage, check if there's an item in the inventory..
-// ...if so, give the user a choice to progress to a new passage:
-// <<if $inventory.indexOf("The Golden Key") == -1>>[[Unlock the door.]]<<endif>>
-//
-// 3. To add an "Inventory" link in your sidebar menu, create a passage named "StoryMenu".
-// In it, create a link to your inventory's passage: [[Inventory]] or [[Backpack]], for example.
-// Create a passage named "Inventory", and in it, write something like the following:
-// <<if $inventory.length == 0>>You are not carrying anything.<<else>>You are carrying:
-// <<invWithLinks>> <<endif>>
-// <<back>>
 
 // A helper function for the following macros.
 window.getInv = function() {
@@ -40,33 +21,7 @@ macros.addToInv = {
       throwError(place, "<<" + macroName + ">>: no parameters given");
       return;
     }
-	var w=window.itemsC[params[0]];
-	var wV=window.itemF.itemTwee(params[0]);
-	var type=params[1];
-	if (w.surgery) {
-		return;
-	}
-	if (!w) {
-		throwError(place, "<<" + macroName + ">>: invalid item '" + params[0] + "'");
-		return;
-	}
-	if (!wV) {
-		throwError(place, "<<" + macroName + ">>: invalid $item2 '" + params[0] + "'");
-		return;
-	}
-	if (w.maxAlt) {
-		if (!type) {
-			type=0;
-		}
-		if ((wV.curAlt==0) && (wV.ownAlt.length==0)) {
-			wV.curAlt=type;
-		}
-		wV.ownAlt[type]=true;
-	}
-    if (state.active.variables.inventory.indexOf(w.id) == -1) {
-		state.active.variables.inventory.push(w.id);
-		state.active.variables.inventory=state.active.variables.inventory.sort();
-    }
+	State.active.variables.player.inventory[params[0]] = {};
 	macros.getInventoryList.handler(document.getElementById('inventory'));
   }
 };
@@ -79,37 +34,7 @@ macros.removeFromInv = {
 			throwError(place, "<<" + macroName + ">>: no parameters given");
 			return;
 		}
-		var index = State.active.variables.inventory.indexOf(params[0]);
-		var removeItem = true;
-		var w=window.itemsC[params[0]];
-		var wV=window.itemF.itemTwee(params[0]);
-		if (!w) {
-			throwError(place, "<<" + macroName + ">>: invalid item '" + params[0] + "'");
-			return;
-		}
-		if (!wV) {
-			throwError(place, "<<" + macroName + ">>: invalid $item2 '" + params[0] + "'");
-			throwError(place, "<<" + macroName + ">>: invalid $item2 '" + params[0] + "'");
-			return;
-		}
-		if (params.length == 2){
-			var type = params[1];
-		}
-		else {
-			var type=wV.curAlt;
-		}
-		if (window.itemsC[params[0]].maxAlt){
-			wV.ownAlt[type]=null;
-			for (var i = 0; i < wV.ownAlt.length;i++){
-				if (wV.ownAlt[i] == true){
-					removeItem = false;
-					wV.curAlt = i;
-				}
-			}
-		}
-		if (index != -1 && removeItem == true) {
-			state.active.variables.inventory.splice(index, 1);
-		}
+		delete State.active.variables.player.inventory[params[0]];
 	}
 };
 
@@ -210,32 +135,9 @@ macros ['glitchText'] = {
 
 macros.wearClothing = {
   handler: function(place, macroName, params, parser) {
-		var w=window.itemsC[params[0]];
-		if (!w) {
-			throwError(place, "<<" + macroName + ">>: invalid clothing '" + params[0] + "'");
-			return;
-		}
-		var ca=state.active.variables.player.clothes;
-		for (var i=ca.length-1; i>=0; i--) {		
-			var pc=window.itemsC[ca[i]];
-			if ((pc==null) || (((pc.clothingType + pc.cantWearWith) & (w.clothingType + w.cantWearWith)) > 0)) {
-				state.active.variables.player.clothes.splice(i, 1);
-			}
-		}
-		state.active.variables.player.clothes.push(w.id);
-		if (ca.length > 0) {
-			state.active.variables.player.clothes=state.active.variables.player.clothes.sort();
-		}
-		var type=params[1];
-		if (!(isNaN(type))) {
-			var wV=window.itemF.itemTwee(params[0]);
-			if (!wV) {
-					throwError(place, "<<" + macroName + ">>: invalid $item2 '" + params[0] + "'");
-					return;
-				}
-			wV.curAlt=type;
-		}
-	}
+	console.log(`<<wearClothing ${params}>>`)
+	window.inventoryCode.equipItem(params[0]);
+  }
 };
 
 macros.buyItem = {

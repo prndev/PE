@@ -43,7 +43,7 @@
 							playerCode.isWearingOn(itemTypes.Stockings)]>>
 	<<set _curClothesOver=[]>>
 
-	<<if _curClothes[8].id eq 'buttPlugInflate'>>
+	<<if _curClothes[8] && _curClothes[8].id eq 'buttPlugInflate'>>
 		<<set _curClothes[8].image = "buttplug_inflate_" + $player.buttplugInflate + ".jpg">>
 	<<endif>>
 	

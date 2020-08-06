@@ -1,12 +1,19 @@
 window.inventoryCode = {
     getItem : function(predicate) {
-        console.log(`getItem(…)`, predicate);
+        console.log(`getItem(${predicate})`, predicate);
         let inventory = State.active.variables.player.inventory;
-        let result = Object.entries(inventory).map(
+        console.log(inventory);
+        let ownedItems = Object.entries(inventory).map(
             ([itemid, item]) => Object.assign({}, window.items[itemid], item)
-        ).find(predicate);
+        );
+        console.log(ownedItems);
+        let result = ownedItems.find(predicate);
         console.log(result);
         return result;
+    },
+    equipItem : function(itemid) {
+        let inventory = State.active.variables.player.inventory;
+        inventory[itemid].equipped = true;
     }
 };
 
