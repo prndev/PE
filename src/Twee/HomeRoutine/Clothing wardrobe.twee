@@ -1,9 +1,10 @@
 :: Clothing wardrobe [nobr]
 <div class="inventory">
+<<set _selectorExists = document.getElementById("clothing_selector")>>
 <<set _ownedItems = inventoryCode.getItems(i => true)>>
 <<for _i to 0; _i lt _ownedItems.length; _i++>>
 	<<set _src="Images/items/" + itemF.image(_ownedItems[_i])>>
-	<<print '<<link [img[_src]]>><<run inventoryCode.equipItemToggle("'+_ownedItems[_i].id+'")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>>'>>
+	<<print '<<link [img[_src]]>><<run inventoryCode.equipItemToggle("'+_ownedItems[_i].id+'")>><<updateClothes>><<if _selectorExists>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><<endif>><</link>>'>>
 <</for>>
 </div>
 <<click "Undress">><<set playerCode.getNaked()>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</click>>
