@@ -77,7 +77,7 @@
 	\
 	<div id="sidebarWindow" class="">\
 		<<print '<div id="clothes" class="'+window.sidebar.className(0)+'"><span id="sidebar_clothes"></span></div>'>>
-		<<print '<div id="inventory" class="'+window.sidebar.className(1)+'"><<click "Phone">><<script>>Dialog.setup("Phone");	Dialog.wiki(Story.get("Phone").processText());	Dialog.open();<</script>><</click>><<getInventoryList>></div>'>>\
+		<<print '<div id="inventory" class="'+window.sidebar.className(1)+'"><<click "Phone">><<script>>Dialog.setup("Phone");	Dialog.wiki(Story.get("Phone").processText());	Dialog.open();<</script>><</click>></div>'>>\
 		<<print '<div id="stats" class="'+window.sidebar.className(2)+'"><span id="sidebar_stats"></span></div>'>>\
 		<<if $player.debugA>>\
 			<<print '<div id="debug" class="'+window.sidebar.className(3)+'"><span id="sidebar_debug"></span></div>'>>\

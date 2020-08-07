@@ -1,17 +1,4 @@
-// Begin Inventory Macros
-
-// A helper function for the following macros.
-window.getInv = function() {
-  return state.active.variables.inventory;
-}
-
-// Starts your inventory. You need to call this once at the start of your game in order to make the inventory work.
-// Usage: Place <<initInv>> in your StoryInit passage. Don't have a StoryInit passage? Make one.
-macros.initInv = {
-  handler: function(place, macroName, params, parser) {
-    state.active.variables.inventory = [];
-  }
-};
+// Begin Inventory Macros (adapted by prndev)
 
 // Add an item to your inventory:
 // Usage: <<addToInv rock>> or <<addToInv "a smooth rock">>
@@ -22,7 +9,6 @@ macros.addToInv = {
       return;
     }
 	State.active.variables.player.inventory[params[0]] = {};
-	macros.getInventoryList.handler(document.getElementById('inventory'));
   }
 };
 
@@ -38,66 +24,6 @@ macros.removeFromInv = {
 	}
 };
 
-// Display the inventory as a list: Rock, Paper, Scissors
-// This can go in any passage, but the best spot would be your [[Inventory]] passage.
-// Usage: <<inv>>
-macros.inv = {
-  handler: function(place, macroName, params, parser) {
-    if (state.active.variables.inventory.length == 0) {
-      new Wikifier(place, 'nothing');
-    } else {
-      new Wikifier(place, state.active.variables.inventory.join(','));
-    }
-  }
-};
-
-// Display the inventory as a series of links to passages with the same names.
-// This can go in any passage, but the best spot would be your [[Inventory]] passage.
-// Usage: <<invWithLinks>>
-// If those passages don't exist, the links will be broken.
-// There is a line break after every item in the inventory.
-macros.invWithLinks = { 
-  handler: function(place, macroName, params, parser) {
-    if (state.active.variables.inventory.length == 0) {
-      new Wikifier(place, 'nothing');
-    } else {
-      new Wikifier(place, '[[' + state.active.variables.inventory.join(']]<br>[[') + ']]');
-    }
-  }
-};
-
-macros.getInventoryList = {
-  handler: function(place, macroName, params, parser) {
-//		new Wikifier(place, 'Aside from your clothing, ');
-		var inv=state.active.variables.inventory;
-		var f=false;
-		var td='';
-		for (var i=0; i<inv.length; i++) {
-			var o=window.itemsC[inv[i]];
-			if (o && o.clothingType == 0 && (!o.surgery) && o.store != 1 && o.store != 2) {
-				if (!f) {
-					f=true;
-//					new Wikifier(place, 'you currently have these items:<br><br><img id="inv_item" class="hidden">');
-				}
-				td+='<br>';
-				td+=window.itemF.nameById(inv[i]);
-			}
-		}
-		if (!f) {
-//			td+="You don't have any items.";
-		}
-		new Wikifier(place, td);
-	}
-};
-
-// Empty the inventory entirely.
-// Note: This is not like "dropping" an object; they are not added to the current room/passage. It just erases them all entirely.
-// Usage: <<emptyInv>>
-macros.emptyInv = { 
-  handler: function(place, macroName, params, parser) {
-    state.active.variables.inventory = []
-  }
-};
 // End Inventory Macros
 
 macros ['glitchText'] = {
