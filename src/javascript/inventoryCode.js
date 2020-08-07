@@ -3,7 +3,7 @@ window.inventoryCode = {
         //console.log(`getItems(${predicate})`, predicate);
         let inventory = State.active.variables.player.inventory;
         let ownedItems = Object.entries(inventory).map(
-            ([itemid, item]) => Object.assign({}, window.itemsC[itemid], item)
+            ([itemid, item]) => Object.assign({}, window.itemInfo[itemid], item)
         );
         let result = ownedItems.filter(predicate);
         //console.log(result);
@@ -15,7 +15,7 @@ window.inventoryCode = {
     },
     equipItem : function(itemid) {
         let inventory = State.active.variables.player.inventory;
-        if (! window.itemsC[itemid].NotClothing) {
+        if (! window.itemInfo[itemid].NotClothing) {
             inventory[itemid].equipped = true;
         }
     },

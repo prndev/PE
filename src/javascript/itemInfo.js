@@ -1,11 +1,13 @@
 /*
  * This is the static list of all items existing in the game.
+ * 
+ * Do not access this directly. Use the functions provided in inventoryCode instead.
  */
 
-// TODO: check if items need their own ids
+// TODO: check if items need their own ids – yes, it is useful. But maybe window.itemInfo should be a list (so ids are in one place only)
 // TODO: store should not be a magic number
 
-window.itemsC = { // it is called itemsC for backwards compatibility
+window.itemInfo = {
     /* Schoolwear */
 	schoolMale : {
 		id: "schoolMale",
