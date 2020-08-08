@@ -2,7 +2,7 @@
 \
 Quick Access Styles:
 <<for _quickSlot range $inventory.quickSlots>>\
-	<<set _ownedItems = inventoryCode.getItems(i => _quickSlot.itemids.includes(i.id))>>\
+	<<set _ownedItems = inventoryCode.getOwnedItems(i => _quickSlot.itemids.includes(i.id))>>\
 	/* check whether payer owns all items mentioned in quick slot */\
 	<<if _ownedItems.length >= _quickSlot.itemids.length >>\
 		<<print '<<link _quickSlot.name>><<run playerCode.quickSlotSelect("'+_quickSlot.name+'")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>>'>>

@@ -1,15 +1,15 @@
 window.playerCode={	
 	isWearing: function(item) {
 		/* this is used almost never */
-		return window.inventoryCode.getItem(i => item && i.id === item.id && i.equipped) || false;
+		return window.inventoryCode.getOwnedItem(i => item && i.id === item.id && i.equipped) || false;
 	},
 	isWearingOn: function(typeid) {
 		// TODO: this should be named getEquippedItemByType
 		let typename = Object.entries(window.itemTypes).find(([name, value]) => value === typeid)[0];
-		return window.inventoryCode.getItem(i => i[typename] && i.equipped);
+		return window.inventoryCode.getOwnedItem(i => i[typename] && i.equipped);
 	},
 	getNaked: function() {
-		let equippedItems = window.inventoryCode.getItems(i => i.equipped);
+		let equippedItems = window.inventoryCode.getOwnedItems(i => i.equipped);
 		equippedItems.forEach(i => {
 			if (!i.Chastity || !State.active.variables.flags.chastityLocked) {
 				window.inventoryCode.unequipItem(i.id);
@@ -376,11 +376,11 @@ window.playerCode={
 		player.tuitionIncrease = 30*State.active.variables.flags.tuitionFactor;
 	},
 	owns: function(item) {
-		return window.inventoryCode.getItem(i => item && i.id === item.id);
+		return window.inventoryCode.getOwnedItem(i => item && i.id === item.id);
 	},
 	ownsType: function(clothingType) {
 		let typename = Object.entries(window.itemTypes).find(([name, value]) => value === typeid)[0];
-		return window.inventoryCode.getItem(i => i[typename]);
+		return window.inventoryCode.getOwnedItem(i => i[typename]);
 	},
     quickSlotSelect : function(quickSlotName) {
         this.getNaked();

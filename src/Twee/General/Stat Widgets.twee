@@ -30,7 +30,7 @@
 <<replace "#sidebar_clothes">>
 <<if $showimages and (not $avatar.active)>><!--<Clothes mini-images>-->
 <div class="sidebarImages">
-	<<set _equippedItems = inventoryCode.getItems(i => i.equipped)>>
+	<<set _equippedItems = inventoryCode.getOwnedItems(i => i.equipped)>>
 	<<for _i to 0; _i lt _equippedItems.length; _i++>>
 		<<print '<img src="Images/items/' + itemF.image(_equippedItems[_i]) +'" class="clothing_image_sidebar_0">'>>
 	<</for>>

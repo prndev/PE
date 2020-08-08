@@ -2,7 +2,7 @@
 <div class="inventory">
 <<set _selectorExists = document.getElementById("clothing_selector")>>
 <<for _category range Object.keys(itemTypes)>>
-	<<set _ownedItems = inventoryCode.getItems(i => i[_category])>>
+	<<set _ownedItems = inventoryCode.getOwnedItems(i => i[_category])>>
 	<<if _ownedItems.length>>
 		<br>_category:<br>
 		<<for _item range _ownedItems>>

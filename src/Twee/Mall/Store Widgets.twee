@@ -157,7 +157,7 @@ Which shop would you like to visit?
 <div class="clothesDivider"></div>\
 
 Have all the items in the world diectly accessible for debugging purposes:
-<<set _items = Object.values(window.itemsC) >>\
+<<set _items = inventoryCode.getItems() >>\
 <<set _stores = [...new Set(_items.map(i => i.store))].sort() >>\
 <<for _store range _stores>>
 	Store _store:
