@@ -20,19 +20,38 @@ window.itemTypes={
 	Hairband:   1024
 };
 
+let make_ownAlt_proxy = function(itemid, ownAlt, namespace) {
+	return new Proxy(ownAlt, {
+		set: function(obj, prop, value) {
+			console.log(`${namespace} item ${itemid} ownAlt proxy set`, prop);
+			if (value) {
+				console.log(`${namespace} item ${itemid} ownAlt proxy adds ${itemid+prop} to player inventory`);
+				window.inventoryCode.ownItem(itemid+prop);
+			} else {
+				console.log(`${namespace} item ${itemid} ownAlt proxy removes ${itemid+prop} from player inventory`);
+				window.inventoryCode.disownItem(itemid+prop);
+			}
+			return prop;
+		}
+	})
+}
+
 window.itemF = {
 	image: function(item) {
 		return item.image;
 	},
-	itemTwee: function(id) {
-		return new Proxy(window.items[id], {
+	itemTwee: function(itemid) {
+		return new Proxy({}, {
 			get: function(target, name, receiver) {
-				console.log(`persistent item ${id} proxy get`, name);
-				debugger;
+				console.log(`persistent item ${itemid} proxy get`, name);
+				if (name === 'ownAlt') {
+					let ownAlt = window.inventoryCode.getOwnedItems(i => i && i.id.startsWith(itemid)).map(i => +i.id.replace(/[a-zA-Z]+/,''));
+					return make_ownAlt_proxy(itemid, ownAlt, 'persistent');
+				}
 				return Reflect.get(...arguments);
 			},
 			set: function(obj, prop, value) {
-				console.log(`persistent item ${id} proxy set`, prop);
+				console.log(`persistent item ${itemid} proxy set`, prop);
 				return Reflect.set(...arguments);
 			}
 		})
@@ -44,13 +63,21 @@ let insert_proxies = function(storage, namespace) {
 		return;
 	}
 	Object.entries(window.itemInfo).forEach(
-		([id, item]) => storage[id] = new Proxy(item, {
+		([itemid, item]) => storage[itemid] = new Proxy(item, {
 			get: function(target, name, receiver) {
-				console.log(`${namespace} item ${id} proxy get`, name);
+				console.log(`${namespace} item ${itemid} proxy get`, name);
+				if (name === 'maxAlt') {
+					let maxAlt = window.inventoryCode.getItems(i => i && i.id.startsWith(itemid)).length-1;
+					console.log(`${namespace} item ${itemid} proxy get maxAlt`, maxAlt);
+					return maxAlt;
+				} else if (name === 'ownAlt') {
+					let ownAlt = window.inventoryCode.getOwnedItems(i => i && i.id.startsWith(itemid)).map(i => +i.id.replace(/[a-zA-Z]+/,''));
+					return make_ownAlt_proxy(itemid, ownAlt, namespace);
+				}
 				return Reflect.get(...arguments);
 			},
 			set: function(obj, prop, value) {
-				console.log(`${namespace} item ${id} proxy set`, prop);
+				console.log(`${namespace} item ${itemid} proxy set`, prop);
 				return Reflect.set(...arguments);
 			}
 		})

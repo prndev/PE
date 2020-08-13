@@ -202,7 +202,18 @@ window.itemInfo = {
 		female: true,
 		image: "buttplug_vibro.jpg"
 	},
-    
+/// special panties
+	pantiesCotton40: {
+		id: "pantiesCotton40",
+		name: "Panties",
+		Underwear: true,
+		female: true,
+		school: true,
+		owner: "$guardian",
+		daringRec: 3,
+		cost: 15,
+		image: "panties_cotton_40.jpg"
+	},
 /// automatically converted after this line ///
 	pyjamasMale : {
 		id : "pyjamasMale",
