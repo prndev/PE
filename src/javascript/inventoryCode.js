@@ -9,8 +9,13 @@ window.inventoryCode = {
         //console.log(`getOwnedItems(${predicate})`, predicate);
         let inventory = State.active.variables.player.inventory;
         let ownedItems = Object.entries(inventory).map(
-            ([itemid, item]) => Object.assign({}, window.itemInfo[itemid], item)
-        );
+            ([itemid, item]) => {
+                if (itemid in window.itemInfo) {
+                    return Object.assign({}, window.itemInfo[itemid], item);
+                } else {
+                    return null;
+                }
+        ).filter(i => i !== null);
         let result = ownedItems.filter(predicate);
         //console.log(result);
         return result;
