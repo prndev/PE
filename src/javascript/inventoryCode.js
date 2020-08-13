@@ -5,8 +5,7 @@ window.inventoryCode = {
         }
         return Object.values(window.itemInfo).filter(predicate);
     },
-    getOwnedItems : function(predicate) {
-        //console.log(`getOwnedItems(${predicate})`, predicate);
+    _getMergedData() {
         let inventory = State.active.variables.player.inventory;
         let ownedItems = Object.entries(inventory).map(
             ([itemid, item]) => {
@@ -15,14 +14,18 @@ window.inventoryCode = {
                 } else {
                     return null;
                 }
+            }
         ).filter(i => i !== null);
-        let result = ownedItems.filter(predicate);
+        return ownedItems;
+    },
+    getOwnedItems : function(predicate) {
+        //console.log(`getOwnedItems(${predicate})`, predicate);
+        let result = this._getMergedData().filter(predicate);
         //console.log(result);
         return result;
     },
     getOwnedItem : function(predicate) {
-        let result = this.getOwnedItems(predicate); // maybe use find instead?
-        return result ? result[0] : undefined;
+        return this._getMergedData().find(predicate);
     },
     equipItem : function(itemid) {
         let inventory = State.active.variables.player.inventory;
@@ -42,4 +45,14 @@ window.inventoryCode = {
             this.equipItem(itemid);
         }
     },
+    ownItem : function(itemid) {
+        if (!(itemid in State.active.variables.player.inventory)) {
+            State.active.variables.player.inventory[itemid] = {};
+        }
+    },
+    disownItem : function(itemid) {
+        if (itemid in State.active.variables.player.inventory) {
+            delete State.active.variables.player.inventory[itemid];
+        }
+    }
 };

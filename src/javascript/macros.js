@@ -8,7 +8,7 @@ macros.addToInv = {
       throwError(place, "<<" + macroName + ">>: no parameters given");
       return;
     }
-	State.active.variables.player.inventory[params[0]] = {};
+    window.inventoryCode.ownItem(params[0]);
   }
 };
 
@@ -20,7 +20,7 @@ macros.removeFromInv = {
 			throwError(place, "<<" + macroName + ">>: no parameters given");
 			return;
 		}
-		delete State.active.variables.player.inventory[params[0]];
+		window.inventoryCode.disownItem(params[0]);
 	}
 };
 
