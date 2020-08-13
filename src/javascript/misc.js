@@ -31,7 +31,6 @@ window.misc={
 				ra.push(sia[i]);
 			}
 		}
-		console.log(ra);
 		return ra;
 	},
 	wager: {
