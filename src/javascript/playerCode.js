@@ -4,7 +4,7 @@ window.playerCode={
 		return window.inventoryCode.getOwnedItem(i => item && i.id === item.id && i.equipped) || false;
 	},
 	isWearingOn: function(typeid) {
-		// TODO: this should be named getEquippedItemByType
+		// TODO INVENTORY: this should be named getEquippedItemByType
 		let typename = Object.entries(window.itemTypes).find(([name, value]) => value === typeid)[0];
 		return window.inventoryCode.getOwnedItem(i => i[typename] && i.equipped);
 	},

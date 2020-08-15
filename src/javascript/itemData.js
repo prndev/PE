@@ -10,8 +10,8 @@
  * baseItemData is a list which is stored as an object in window.itemData with item.id : item for quick lookup by id.
  */
 
-// TODO: store should not be a magic number
-// TODO: split definitions into separate files
+// TODO INVENTORY: store should not be a magic number
+// TODO INVENTORY: split definitions into separate files
 
 let baseItemData = [
   {

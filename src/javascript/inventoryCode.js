@@ -41,6 +41,7 @@ window.inventoryCode = {
     equipItem : function(itemid) {
         let inventory = State.active.variables.player.inventory;
         if (! window.itemData[itemid].NotClothing) {
+            // TODO INVENTORY: unequip item(s) of same type – maybe have item type as string?
             inventory[itemid].equipped = true;
         }
     },
