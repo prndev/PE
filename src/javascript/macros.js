@@ -8,7 +8,11 @@ macros.addToInv = {
       throwError(place, "<<" + macroName + ">>: no parameters given");
       return;
     }
-    window.inventoryCode.ownItem(params[0]);
+    let itemid = params[0];
+    if (params.length == 2) {
+		itemid += (+params[1]);
+	}
+    window.inventoryCode.ownItem(itemid);
   }
 };
 
@@ -322,6 +326,8 @@ macros.removeClothingType = {
 			throwError(place, "<<" + macroName + ">>: invalid item type '" + params[0] + "'");
 			return;
 		}
+		// TODO INVENTORY: reimplement this (used by friend and home exercise)
+		/*
 		var ca=state.active.variables.player.clothes;
 		for (var i=ca.length-1; i>=0; i--) {
 			var pc=window.itemsC[ca[i]];
@@ -329,6 +335,7 @@ macros.removeClothingType = {
 				state.active.variables.player.clothes.splice(i, 1);
 			}
 		}
+		*/
 	}
 };
 
