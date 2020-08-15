@@ -3,14 +3,14 @@ window.inventoryCode = {
         if (!predicate) {
             predicate = i => true;
         }
-        return Object.values(window.itemInfo).filter(predicate);
+        return Object.values(window.itemData).filter(predicate);
     },
     _getMergedData() {
         let inventory = State.active.variables.player.inventory;
         let ownedItems = Object.entries(inventory).map(
             ([itemid, item]) => {
-                if (itemid in window.itemInfo) {
-                    return Object.assign({}, window.itemInfo[itemid], item);
+                if (itemid in window.itemData) {
+                    return Object.assign({}, window.itemData[itemid], item);
                 } else {
                     return null;
                 }
@@ -29,7 +29,7 @@ window.inventoryCode = {
     },
     equipItem : function(itemid) {
         let inventory = State.active.variables.player.inventory;
-        if (! window.itemInfo[itemid].NotClothing) {
+        if (! window.itemData[itemid].NotClothing) {
             inventory[itemid].equipped = true;
         }
     },
@@ -46,7 +46,11 @@ window.inventoryCode = {
         }
     },
     ownItem : function(itemid) {
-        if (!(itemid in State.active.variables.player.inventory)) {
+        if (!(itemid in window.itemData)) {
+            console.log(`Item ${itemid} does not exist. Not adding to player inventory.`);
+        } else if (itemid in State.active.variables.player.inventory) {
+            console.log(`Item ${itemid} already in player inventory. Not adding again.`);
+        } else {
             State.active.variables.player.inventory[itemid] = {};
         }
     },

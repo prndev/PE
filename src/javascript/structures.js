@@ -144,11 +144,11 @@ window.structures={
 			// $inventory shall now hold inventory data for the player / game mechanics, not the items the player character owns – that is now $player.inventory which is never to be accessed directly
 			vars.inventory = { 
 				quickSlots : [ 
-					{ name : "School", itemids : ['schoolMale', 'jocksLucky', 'schoolShoes'] },
-					{ name : "Casual", itemids : ['casualMale', 'jocksLucky', 'sneakers'] },
-					{ name : "Nightwear", itemids : ['pyjamasMale'] },
-					{ name : "Maid", itemids : ['maidOutfit'] },
-					{ name : "Cheerleader", itemids : ['rookieUniform', 'cheerBriefs', 'cheerSneakers', 'socks', 'hairbow'] }
+					{ name : "School", itemids : ['schoolMale', 'jocksLucky0', 'schoolShoes0'] },
+					{ name : "Casual", itemids : ['casualMale0', 'jocksLucky0', 'sneakers0'] },
+					{ name : "Nightwear", itemids : ['pyjamasMale0'] },
+					{ name : "Maid", itemids : ['maidOutfit0'] },
+					{ name : "Cheerleader", itemids : ['rookieUniform', 'cheerBriefs', 'cheerSneakers', 'socks0', 'hairbow0'] }
 				]
 			};
 		}

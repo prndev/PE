@@ -1,11 +1,11 @@
 :: Initialise [pos_130_4]
 \
-<<addToInv 'pyjamasMale'>>\
-<<addToInv 'casualMale'>>\
+<<addToInv 'pyjamasMale0'>>\
+<<addToInv 'casualMale0'>>\
 <<addToInv 'schoolMale'>>\
-<<addToInv 'jocksLucky'>>\
-<<addToInv 'sneakers'>>\
-<<addToInv 'schoolShoes'>>\
+<<addToInv 'jocksLucky0'>>\
+<<addToInv 'sneakers0'>>\
+<<addToInv 'schoolShoes0'>>\
 \
 <<goto [[Begin]]>>\
 \

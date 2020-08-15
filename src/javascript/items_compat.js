@@ -36,11 +36,14 @@ let make_ownAlt_proxy = function(itemid, ownAlt, namespace) {
 	})
 }
 
+// this once was itemFunctions, probably
 window.itemF = {
 	image: function(item) {
 		return item.image;
 	},
 	itemTwee: function(itemid) {
+		// this once returned data from State.variables.items
+		// but somewhere along the line devs got confused with itemsC
 		return new Proxy({}, {
 			get: function(target, name, receiver) {
 				console.log(`persistent item ${itemid} proxy get`, name);
@@ -62,7 +65,12 @@ let insert_proxies = function(storage, namespace) {
 	if (!storage) {
 		return;
 	}
-	Object.entries(window.itemInfo).forEach(
+	// prepare proxies for legacy item ids
+	// new item ids have proxies, too – they do get passed around in legacy code
+	let entries = [];
+	entries.push(...Object.entries(window.baseItemData));
+	entries.push(...Object.entries(window.itemData));
+	entries.forEach(
 		([itemid, item]) => storage[itemid] = new Proxy(item, {
 			get: function(target, name, receiver) {
 				console.log(`${namespace} item ${itemid} proxy get`, name);

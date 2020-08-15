@@ -62,7 +62,12 @@ macros ['glitchText'] = {
 macros.wearClothing = {
   handler: function(place, macroName, params, parser) {
 	console.log(`<<wearClothing ${params}>>`)
-	window.inventoryCode.equipItem(params[0]);
+	let item = window.inventoryCode.getOwnedItem(i => i.id === params[0]);
+	if (!item) {
+		// for legacy item system with variants
+		item = window.inventoryCode.getOwnedItem(i => i.id.startsWith(params[0]));
+	}
+	window.inventoryCode.equipItem(item.id);
   }
 };
 
