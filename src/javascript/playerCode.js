@@ -1,12 +1,20 @@
 window.playerCode={	
 	isWearing: function(item) {
 		/* this is used almost never */
+		// TODO INVENTORY: adjust for item variants like isWearingOn does
 		return window.inventoryCode.getOwnedItem(i => item && i.id === item.id && i.equipped) || false;
 	},
 	isWearingOn: function(typeid) {
 		// TODO INVENTORY: this should be named getEquippedItemByType
+		// this is a legacy inventory function and should no longer be used
 		let typename = Object.entries(window.itemTypes).find(([name, value]) => value === typeid)[0];
-		return window.inventoryCode.getOwnedItem(i => i[typename] && i.equipped);
+		let item = window.inventoryCode.getOwnedItem(i => i[typename] && i.equipped);
+		if (item) {
+			item = Object.assign({}, item); // create a copy of the item
+			item.id = item.id.replace(/[0-9]*$/,''); // remove numeric suffix from id so legacy code can handle it
+		}
+		console.log(`isWearingOn(${typename}) returns`, item);
+		return item;
 	},
 	getNaked: function() {
 		let equippedItems = window.inventoryCode.getOwnedItems(i => i.equipped);
@@ -415,10 +423,8 @@ window.playerCode={
 		if (!id) {
 			return;
 		}
-		var i=state.active.variables.player.clothes.indexOf(id);
-		if (i >= 0) {
-			state.active.variables.player.clothes.splice(i, 1);
-		}
+		// TODO INVENTORY: implement variants
+		window.inventoryCode.unequipItem(id);
 	},
 	clothesOverride: function() {
 		var itemsC=window.itemsC;

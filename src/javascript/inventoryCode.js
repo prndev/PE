@@ -47,7 +47,9 @@ window.inventoryCode = {
     },
     unequipItem : function(itemid) {
         let inventory = State.active.variables.player.inventory;
-        delete inventory[itemid].equipped;
+        if (itemid in inventory) {
+            delete inventory[itemid].equipped;
+        }
     },
     equipItemToggle : function(itemid) {
         let inventory = State.active.variables.player.inventory;
