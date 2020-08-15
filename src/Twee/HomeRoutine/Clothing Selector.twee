@@ -7,8 +7,9 @@ Clothing Quick Access:
 	/* check whether payer owns all items mentioned in quick slot */\
 	<<if _ownedItems.length >= _quickSlot.itemids.length >>\
 		<div>\
+		_quickSlot.name
 		<<for _item range _ownedItems>>[img[inventoryCode.imgSrc(_item)]]<<endfor>>
-		<<print '<span><<link _quickSlot.name>><<run playerCode.quickSlotSelect("'+_quickSlot.name+'")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>></span>'>>\
+		<<print '<span><<link "Wear">><<run playerCode.quickSlotSelect("'+_quickSlot.name+'")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>> | <<link "Set">><<run playerCode.quickSlotSet("'+_quickSlot.name+'")>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>></span>'>>\
 		</div>\
 	<<endif>>\
 <<endfor>>\

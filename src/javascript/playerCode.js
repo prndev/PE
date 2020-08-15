@@ -387,6 +387,10 @@ window.playerCode={
         let quickSlots = State.active.variables.inventory.quickSlots;
         quickSlots.find(qs => qs.name === quickSlotName).itemids.forEach(iid => window.inventoryCode.equipItem(iid));
     },
+    quickSlotSet : function(quickSlotName) {
+        let quickSlots = State.active.variables.inventory.quickSlots;
+        quickSlots.find(qs => qs.name === quickSlotName).itemids = inventoryCode.getOwnedItems(i => i.equipped).map(i => i.id);
+    },
 	wearClothesJS: function(id) {
 		if (!id) {
 			return;
