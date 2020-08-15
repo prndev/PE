@@ -1,4 +1,15 @@
+/*
+ * This is prndev's inventory code.
+ * 
+ * window.itemData holds the static constant information about all items existing in the game world.
+ * $player.inventory holds all writable information about items the player character owns. $player.inventory is persisted by Twine and should hold only minimal information to prevent save state bloat.
+ * 
+ * The getOwnedItems functions overlay the information of $player.inventory atop those of window.itemData.
+ * 
+ * TODO: have a function returning the writable item
+ */
 window.inventoryCode = {
+    // search in all items existing in the world
     getItems : function(predicate) {
         if (!predicate) {
             predicate = i => true;
@@ -18,12 +29,12 @@ window.inventoryCode = {
         ).filter(i => i !== null);
         return ownedItems;
     },
+    // search in items owned by player
     getOwnedItems : function(predicate) {
-        //console.log(`getOwnedItems(${predicate})`, predicate);
         let result = this._getMergedData().filter(predicate);
-        //console.log(result);
         return result;
     },
+    // search one item owned by player
     getOwnedItem : function(predicate) {
         return this._getMergedData().find(predicate);
     },
@@ -45,6 +56,7 @@ window.inventoryCode = {
             this.equipItem(itemid);
         }
     },
+    // give an item to the player
     ownItem : function(itemid) {
         if (!(itemid in window.itemData)) {
             console.log(`Item ${itemid} does not exist. Not adding to player inventory.`);
@@ -54,11 +66,13 @@ window.inventoryCode = {
             State.active.variables.player.inventory[itemid] = {};
         }
     },
+    // take away an item from the
     disownItem : function(itemid) {
         if (itemid in State.active.variables.player.inventory) {
             delete State.active.variables.player.inventory[itemid];
         }
     },
+    // prepend image path for displaying item visually
     imgSrc : function (item) {
         return "Images/items/" + item.image;
     }
