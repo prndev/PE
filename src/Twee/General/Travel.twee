@@ -193,6 +193,13 @@
 		<<else>>\
 			<div class="tooltip">@@.halftransparent;<<print _description>>@@ <span id="test_surv" class="tooltiptext"><<print _reason>></span></div>\
 		<<endif>>\
+		<<if _quickDressForSchool>>\
+			<<if $cheerleaders.active and (playerCode.owns(itemsC.rookieUniform) or playerCode.owns(itemsC.cheerDress)) and (window.timeCode.isTuesday() or window.timeCode.isThursday())>>\
+				@@.inv_action_faded;-@@ <<link "Dress for School">><<run playerCode.quickSlotSelect("Cheerleader")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>>\
+			<<else>>\
+				@@.inv_action_faded;-@@ <<link "Dress for School">><<run playerCode.quickSlotSelect("School")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>>\
+			<<endif>>\
+		<<endif>>\
 
 	<<endif>>\
 <</for>>\

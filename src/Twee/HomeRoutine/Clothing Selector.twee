@@ -57,7 +57,8 @@ Clothing Quick Access:
 		<<endif>>\
 		
 	<<else>>\
-		<div class="tooltip">@@.halftransparent;Go to sleep@@ <span id="test_surv" class="tooltiptext"><<print $reason.dressedSleep>></span></div>@@\
+		<div class="tooltip">@@.halftransparent;Go to sleep@@ <span id="test_surv" class="tooltiptext"><<print $reason.dressedSleep>></span></div>\
+		@@.inv_action_faded;-@@ <<link "Dress for Sleep">><<run playerCode.quickSlotSelect("Nightwear")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>>\
 		
 	<<endif>>\
 	<<if $therapistTalks.talkChastitySleep.finished and (not $therapistTalks.talkVibrator.start)>>\
