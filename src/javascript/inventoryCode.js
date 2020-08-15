@@ -58,5 +58,8 @@ window.inventoryCode = {
         if (itemid in State.active.variables.player.inventory) {
             delete State.active.variables.player.inventory[itemid];
         }
+    },
+    imgSrc : function (item) {
+        return "Images/items/" + item.image;
     }
 };

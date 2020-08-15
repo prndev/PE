@@ -1,14 +1,20 @@
 :: Clothing Selector [pos_1276_820]
 \
-Quick Access Styles:
+Clothing Quick Access:
+<div class="quick_slot_preview">
 <<for _quickSlot range $inventory.quickSlots>>\
 	<<set _ownedItems = inventoryCode.getOwnedItems(i => _quickSlot.itemids.includes(i.id))>>\
 	/* check whether payer owns all items mentioned in quick slot */\
 	<<if _ownedItems.length >= _quickSlot.itemids.length >>\
-		<<print '<<link _quickSlot.name>><<run playerCode.quickSlotSelect("'+_quickSlot.name+'")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>>'>>
+		<div>\
+		<<for _item range _ownedItems>>[img[inventoryCode.imgSrc(_item)]]<<endfor>>
+		<<print '<span><<link _quickSlot.name>><<run playerCode.quickSlotSelect("'+_quickSlot.name+'")>><<updateClothes>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><</link>></span>'>>\
+		</div>\
 	<<endif>>\
 <<endfor>>\
+</div>\
 
+<div class="clothesDivider"></div>\
 [[Check yourself][$player.checkPlace=0]] @@.inv_action_faded;-@@ [[Check your room|Check bedroom][$player.checkPlace=0]]
 \
 <<if (not $flags.walletForgottenEnd) and window.timeCode.isMonday() and ($flags.walletForgottenStart or ($player.perversion.teacher gte 3 and (not $flags.sissyConfession) and random(20) eq 0))>>\

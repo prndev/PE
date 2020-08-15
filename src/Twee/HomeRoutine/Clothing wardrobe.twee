@@ -6,8 +6,7 @@
 	<<if _ownedItems.length>>
 		<br>_category:<br>
 		<<for _item range _ownedItems>>
-			<<set _src="Images/items/" + itemF.image(_item)>>
-			<<print '<<link [img[_src]]>><<run inventoryCode.equipItemToggle("'+_item.id+'")>><<updateClothes>><<if _selectorExists>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><<endif>><</link>>'>>
+			<<print '<<link [img[inventoryCode.imgSrc(_item)]]>><<run inventoryCode.equipItemToggle("'+_item.id+'")>><<updateClothes>><<if _selectorExists>><<replace "#clothing_selector">><<display "Clothing Selector">><</replace>><<endif>><</link>>'>>
 		<</for>>
 	<<endif>>
 <</for>>

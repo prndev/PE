@@ -2,3 +2,27 @@
 	max-width: 45%;
 	max-height: 45%;
 }
+
+.quick_slot_preview {
+	display: flex;
+}
+
+.quick_slot_preview div {
+	flex-basis: 25%;
+	background-color: #222;
+	border: 1px solid #444;
+	padding: 5px 5px 2em 5px;
+	line-height: normal;
+	margin: 0 2px;
+	position: relative;
+}
+
+.quick_slot_preview div span {
+	position: absolute;
+	bottom: 0.2em;
+}
+
+.quick_slot_preview img {
+	max-width: calc(50% - 4px);
+	margin: 0 2px;
+}
