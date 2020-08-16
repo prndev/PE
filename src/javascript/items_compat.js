@@ -41,6 +41,18 @@ window.itemF = {
 	image: function(item) {
 		return item.image;
 	},
+	name: function(item) {
+		return item.name;
+	},
+	disabled: function(item) {
+		return item.disabled;
+	},
+	daringRec: function(item) {
+		return item.daringRec;
+	},
+	cost: function(item) {
+		return item.cost;
+	},
 	itemTwee: function(itemid) {
 		// this once returned data from State.variables.items
 		// but somewhere along the line devs got confused with itemsC
