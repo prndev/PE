@@ -22,6 +22,8 @@
 @@.halftransparent; (Currently available only to Patreon contributors)@@
 <<endif>>\
 Avatar Selection: <<radiobutton "$avatar.classic" 2 `$avatar.classic === 2 ? "checked" : ""`>>New <<radiobutton "$avatar.classic" 1 `$avatar.classic === 1 ? "checked" : ""`>>New New <<radiobutton "$avatar.classic" 0 `$avatar.classic === 0 ? "checked" : ""`>>Classic
+&#9702; \
+<<checkbox "$useKeyboardShortcuts" false true autocheck>> Enable Keyboard Shortcuts\
 @@\
 
 @@.frame80;\
