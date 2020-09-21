@@ -19,26 +19,31 @@ let add_keyboard_shortcuts = (ev) => {
 			return (s || '').replace(re, '').replace(' ','').trim();
 		}
 		let links = document.getElementById('story').querySelectorAll('a.link-internal');
-		links.forEach(link => {
+		links.forEach((link, index, links) => {
 			if (link.classList.contains('macro-click')) {
 				link.addEventListener('click', add_keyboard_shortcuts);
 			}
 			if (link.querySelector('.keyboard_shortcut')) {
 				// already has shortcut assigned
 			} else {
-				let only_typable_characters = link.innerText.toUpperCase().replace(/[^A-Z0-9 ]/g, '');
-				let text = keyword(only_typable_characters);
-				if (text) {
-					let keychars = Array.from(text);
-					let usedchars = Object.keys(window.keyboard_shortcuts);
-					keychars.find(kc => {
-						if (!usedchars.contains(kc)) {
-							window.keyboard_shortcuts[kc] = link;
-							link.innerHTML = `<span class="keyboard_shortcut">${kc}</span> ${link.innerHTML}`;
-							return true;
-						}
-						return false;
-					});
+				if (index === links.length - 1) { 
+					window.keyboard_shortcuts[" "] = link;
+					link.innerHTML = `<span class="keyboard_shortcut">Space</span> ${link.innerHTML}`;
+				} else {
+					let only_typable_characters = link.innerText.toUpperCase().replace(/[^A-Z0-9 ]/g, '');
+					let text = keyword(only_typable_characters);
+					if (text) {
+						let keychars = Array.from(text);
+						let usedchars = Object.keys(window.keyboard_shortcuts);
+						keychars.find(kc => {
+							if (!usedchars.contains(kc)) {
+								window.keyboard_shortcuts[kc] = link;
+								link.innerHTML = `<span class="keyboard_shortcut">${kc}</span> ${link.innerHTML}`;
+								}
+								return true;
+							return false;
+						});
+					}
 				}
 			}
 		});
