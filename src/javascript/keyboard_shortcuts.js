@@ -24,6 +24,7 @@ let add_keyboard_shortcuts = (ev) => {
 				link.addEventListener('click', add_keyboard_shortcuts);
 			}
 			if (link.querySelector('.keyboard_shortcut')) {
+				console.log('already has', link);
 				// already has shortcut assigned
 			} else {
 				if (index === links.length - 1) { 
@@ -35,7 +36,7 @@ let add_keyboard_shortcuts = (ev) => {
 					if (text) {
 						let keychars = Array.from(text);
 						let usedchars = Object.keys(window.keyboard_shortcuts);
-						keychars.find(kc => {
+						let keychar = keychars.find(kc => {
 							if (!usedchars.contains(kc)) {
 								window.keyboard_shortcuts[kc] = link;
 								link.innerHTML = `<span class="keyboard_shortcut">${kc}</span> ${link.innerHTML}`;
@@ -43,6 +44,11 @@ let add_keyboard_shortcuts = (ev) => {
 								return true;
 							return false;
 						});
+						if (!keychar) {
+							console.log('No chars free', text, usedchars);
+						}
+					} else {
+						console.log('No usable text', link);
 					}
 				}
 			}
