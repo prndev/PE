@@ -28,7 +28,7 @@ is dressed in her usual silky blouse that allows her ample tits to stand proudly
 	<<endif>>\
 <<endif>>\
 \
-<<if ($player.perversion.teacher eq 2) and playerCode.isWearingOn(itemTypes.Chastity) and (not $flags.chastityKey) and ($tasksTeacher.trialChastity.status eq 0) and (not $flags.eagerStart)>>\
+<<if ($player.perversion.teacher eq 2) and playerCode.isWearingOn(itemTypes.Chastity) and (not $flags.chastityKey) and ($tasksTeacher.trialChastity.status eq 0)>>\
 	You go from daydream to fantasy as the rest of the class melts away until it's just you and her. She looks at you with a smile.
 
 	<<display "Teacher fantasy">>\
