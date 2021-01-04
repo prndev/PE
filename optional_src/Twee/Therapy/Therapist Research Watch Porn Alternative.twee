@@ -1,0 +1,22 @@
+:: Therapist Research Watch Porn Alternative
+\
+<<set $player.sexualAcceptance += 1>>\
+<<if $showimages>>\
+<<print '<img src="' + hypnoCode.getHypnoImage() + '">'>>
+<<endif>>\
+<<if playerCode.isMind_0(true)>>\
+@@.fading_text_long;Something inside of you flinches away, rejecting the content.@@
+<<elseif playerCode.isMind_1(true)>>\
+@@.fading_text_long;Something inside of you is still hesitant about the content.@@
+<<elseif playerCode.isMind_2(true)>>\
+@@.fading_text_long;Something inside of you enjoys this, though you still can't quite place exactly what this material is doing to you.@@
+<<endif>>\
+@@.fading_text_long;But you watch@@\
+@@.fading_text_med;, and watch@@\
+@@.fading_text_fast;, and watch...@@
+
+@@.delayed_text_fast;Submit@@\
+@@.delayed_text_med;, give up@@\
+@@.delayed_text_long;, enjoy@@
+
+<<delayedLink 5 "Finish Watching|Therapist Finish Watching">>

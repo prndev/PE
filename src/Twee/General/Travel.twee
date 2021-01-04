@@ -9,7 +9,7 @@
 	<<set _from = locationsJS.school>>\
 <<elseif passage() eq "Go to the mall">>\
 	<<set _from = locationsJS.mall>>\
-<<elseif (passage() eq "Finish watching") or (passage() eq "Therapist talk") or (passage() eq "Visit therapist")>>\
+<<elseif passage().startsWith("Therapist") or (passage() eq "Visit therapist")>>\
 	<<set _from = locationsJS.therapist>>\
 <<elseif (passage() eq "Beauty Salon") or (passage() eq "Go to clinic") or (passage() eq "Work at clinic")>>\
 	<<set _from = locationsJS.clinic>>\
