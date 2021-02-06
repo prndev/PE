@@ -1298,6 +1298,10 @@
 	<<elseif $player.perversion.teacher gt 7 && $player.perversion.teacher lt 11>>\
 	[[Teach perv to 11|Go to bedroom][$player.perversion.teacher++;$flags.bullyRoute = true]]\
 	<<endif>>\
+	<<if !$player.daringFlag.tuition>>\
+		
+		[[Enable Weekly Payments|Go to bedroom][$player.daringFlag.tuition = true]]\
+	<<endif>>\
 	
 	<<if $player.perversion.guardian eq 0>>\
 	[[Guard perv 0 to 1|Good morning][$time.addHours(24);$player.perversion.guardianCooldown=1;$player.perversion.guardian++]] \
