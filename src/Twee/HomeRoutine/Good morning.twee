@@ -621,13 +621,13 @@ Noticing your worried face at her angry outburst, she quickly reassures you.
 			<<elseif $player.alarmProgress eq 9>>\
 			<<set $player.alarmProgress++>>\
 			<<if kinkAllow.bdsm>>\
-				Your penis is free and with a butt-plug vibrating away on your prostate, it is hard not to start masturbating. Having been teased throughout the night, you come quickly, cum splattering all over your midriff and the sheets.
+				Your penis is free and the butt-plug is vibrating away on your prostate, and you can't help but start masturbating. Having been teased throughout the night, you orgasm quickly, cum splattering all over your midriff and the sheets.
 				
-				In your post-orgasmic daze, you realize you made a terrible mistake: The automatic vibrator has not finished "waking" you up, yet. What had been a pleasurable buzz on your insides a few seconds ago, now quickly becomes a source of increasing discomfort.
+				In your post-orgasmic haze, you realize that you made a terrible mistake: the automatic vibrator has not finished "waking" you up, yet. What had been a pleasurable buzz on your insides a few seconds ago, quickly becomes a source of increasing discomfort.
 				
-				@@.hero;I should not have touched myself.@@ you groan to yourself.
+				@@.hero;Why did I touch myself.@@ you groan as you squirm from the post-orgasm stimulation.
 				
-				You decide to not masturbate in the morning, no matter what.
+				Unable to handle the uncomfortable feeling, you resolve to not masturbate in the morning, no matter what.
 			<<else>>\
 				the familiar feeling of the butt-plug alarm vibrating in your anus. Your penis is free, but being used to enduring it in chastity, you submit entirely to the sensation and just lie there, hugging your pillow as your penis twitches and dribbles streams of precum. The temptation to touch yourself is maddening, but each time, something holds you back.
 				
