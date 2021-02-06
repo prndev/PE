@@ -218,6 +218,22 @@ window.dreamsGuardian={
 			return [4,5,6,7].includes(State.active.variables.player.perversion.guardian) && playerCode.isButtslut();
 		}
 	},
+	GuardianFuta: {
+		id: "GuardianFuta",
+		name: "GuardianFuta",
+		image: "",
+		imagePack: "dream",
+		imagePack_final: "dream x",
+		hasPassage: true,
+		active: true,
+		once: false,
+		chance: 10,
+		highestStartPriority: 0,
+		description: "",
+		check: function() {
+			return [4,5,6,7].includes(State.active.variables.player.perversion.guardian) && State.active.variables.kinkAllow.futa;
+		}
+	},
 	WannabeWoman: {
 		id: "WannabeWoman",
 		name: "Dream WannabeWoman",
