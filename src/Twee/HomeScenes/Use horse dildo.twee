@@ -1,0 +1,54 @@
+:: Use horse hildo
+\
+<<set _c to playerCode.isWearingOn(itemTypes.Chastity)>>\
+\
+You decide to play with the horse dildo. This time, you want to go slowly, but deep. You set up the equine cock replica at the end of your bed. You slather the big toy with copious amounts of lube, then you proceed to do the same to your asshole. \
+<<switch $body.anal>>\
+<<case 3>>Prepared like this, the blunt head slips right into your cock-hungry fuck-hole.
+<<case 2>>With a little pressure, the wide head slips into your experienced anus.
+<<case 1>>It takes some pushing and prodding, but eventually the large head slips into your stretched hole.
+<<default>>Try as you might, you cannot fit the huge head into your tight hole. In your frustration, you go a little less easy on your ass. Eventually you manage to force it in.
+<</switch>>\
+
+You are overcome by a pleasant feeling of fullness. But the fun has only just begun. Slowly, you lower yourself onto the animalistic toy’s impressive length. You gasp and shudder as the wide head brushes against your prostate. Knees shaking, you press on-wards. The pressure on your insides reaches a painful peak as the head moves past your love-button. At the same time, your penis twitches<<if _c>> inside its cage<<endif>>, ejecting a surprisingly large drop of clear fluid.
+
+Surprised, but not being deterred from your goal, you keep lowering yourself on the girty silicone member. You meet some resistance as the equine medial ring spreads your butt-hole even wider. Shortly after, you feel it pressing on your prostate. This time the effect less pronounced. Once again, your dick pulses involuntarily. Another drop of sexual fluid escapes the tip<<if _c>> of the cage<<endif>>. You notice the off-white color.
+
+@@.hero;This… this is cum. With the horse-cock in my ass, I am literally fucking the cum out of my body. I am so naughty.@@
+
+You notice your whole body is shaking with arousal. You lean back and take some deep breaths to steady yourself. Then, looking downwards \
+<<switch $body.boobs>>\
+<<case 0>>over your flat chest\
+<<case 1>>past your pert boobs\
+<<case 2>>past your ample breasts\
+<<default>>past your massive tits\
+<</switch>>, \
+you notice the huge bulge in your abdomen.
+
+@@.hero;Woah – what the fuck?@@
+
+You realize this is the outline of the huge stallion dick you forced up your butt. You slowly begin moving your hips, settling into a slow rhythm. You marvel how the bulge moves up and down. You do not actually feel it //in your insides//, but you rather feel stretching the skin over your belly //from the inside//. Your muscles tense involuntarily, eliciting a slutty moan from your mouth. Cum keeps dripping from your penis in erratic pulses. You are not cumming, though.
+
+When you rise from the equine dildo, the flared head hits your prostate from the inside. When you sit down, the medial ring hits it from the rear end. Every time you do this, a spurt of cum escapes your <<if _c>>caged<<endif>> penis. You realize this massage is forcing the fluids right out of your body. It feels nothing like an orgasm, but it is oh so pleasurable. And contrary to an orgasm, you can go on with this forever.
+
+Or so you think. Completely lost in your lust, you ride the dildo. You let your fantasies run wild. You imagine yourself being bred by a hung bloke, a real stud of a man. Beneath your <<if _c>>cock-cage<<else>>swaying erection<<endif>>, copious amounts of cum form a puddle of quite impressive size. Eventually, the pleasure subsides and the pain becomes more noticeable. The muscles in your legs are burning. Your insides feel numb. As you keep riding the dildo, only a few pathetic droplets drip from the tip of your <<if _c>>caged<<endif>> penis. Your body has nothing left to give.
+
+Exhausted, you give your legs some rest, impaling yourself on the huge stallion toy one last time. You feel a sense of pride because you managed to take its entire length. You trace the bulge in your belly with your fingers. It is not actually what you are feeling with your body, but rather knowing you actually do this what makes you feel kinky. You rest for a couple of minutes, simply enjoying the fullness in your butt. Only then you find the strength to rise yourself from the dildo. You wince as the flared head brushes past your prostate on its way out. You let the blunt end pop free with great satisfaction.
+
+<<if $player.perversion.guardian gte 4>>\
+    <<set $player.masturbationType = 14>>/* guardian notices horse dildo usage */\
+	<<if $tasksEmail.WebcamHorseCock.status gte 2>>\
+        /* this shares variables with the normal horse cock mail request for now */\
+        <<set $tasksEmail.WebcamHorseCock.status = 3>>\
+        <<set $tasksEmail.WebcamHorseCock.chance = 10>>\
+		After some time a familiar *bing* from your computer notifies you as a recording of you fucking yourself with the horse dildo appears there.
+
+		[[Send video|UploadPorn]]
+	<<else>>\
+		After some time a familiar *bing* from your computer notifies you as a recording of you fucking yourself with the horse dildo appears there.
+
+	<<endif>>\
+<<endif>>\
+<<set $flags.exhausted = true>>\
+<<set playerCode.masturbate.tempRelief(6)>>/* pacification, but no orgasm */\
+[[Do something else|Go to bedroom]]\
