@@ -26,7 +26,7 @@ Alright! How do you want to do this?
 		<<if (not _c)>>\
 			<<print "[[Use "+_stol+" vibrator on your penis|Use vibrator penis]]">>
 			<<if playerCode.isButtslut()>>\
-			<<print "[[Use "+_stol+" vibrator in your ass|Use vibrator ass]]">>
+				<<print "[[Use "+_stol+" vibrator in your ass|Use vibrator ass]]">>
 			<<endif>>\
 		<<else>>\
 			<<if playerCode.masturbate.isTeased() and playerCode.isHorny()>>\
@@ -45,6 +45,10 @@ Alright! How do you want to do this?
 			<<endif>>\
 		<<endif>>\
 	<<endif>>\
+<<endif>>\
+<<if $flags.WebHorseCock && playerCode.isButtslut() && !$flags.confiscatedVibrator>>\
+	/* technically, checking confiscatedVibrator is wrong, but "confiscated all toys" is in the lieu of the game */\
+	[[Use horse hildo]]
 <<endif>>\
 <<if not $flags.confiscatedInternet>>\
 	<<if _c and playerCode.masturbate.isTeased() and playerCode.isHorny()>>\
@@ -79,7 +83,7 @@ Alright! How do you want to do this?
 <<if _c and ((not $flags.chastityKey) or (not $flags.chastityLocked))>>\
 	<<if $flags.chastityLocked>>\
 		<<if $flags.endSchoolSlut == 2>>\
-			[[ Unlock chastity cage|Fake Key Scene][$flags.chastityKey = true]]
+			[[Unlock chastity cage|Fake Key Scene][$flags.chastityKey = true]]
 		<<else>>\
 			[[Unlock chastity cage|Masturbate][$flags.chastityLocked=false]]
 		<<endif>>\
