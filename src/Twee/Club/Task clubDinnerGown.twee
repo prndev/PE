@@ -125,7 +125,7 @@
 
 	At last, Mr. J lets go of your hair. As you watch beneath the tablecloth, he zips himself up and slides his chair back. He drops his napkin on the floor near his chair, then gets up and leaves.
 
-	[[Try to clean yourself up|Task clubDinnerGown][$scene="cleanUp"; $time.addMinutes(5)]]
+	[[Try to clean yourself up|Task clubDinnerGown][$scene="cleanUp"; window.timeCode.addMinutes(5)]]
 <<elseif $scene eq "cleanUp">>\
 	In less than five minutes, you have been reduced to a total wreck. 
 

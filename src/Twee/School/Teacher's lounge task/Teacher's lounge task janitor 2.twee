@@ -42,7 +42,7 @@ Several more faculty members cycle through the lounge as you go about the arduou
 
 Finally finished, you change back into your uniform and hang the maid outfit back in the supply closet for next time.
 
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<if ($tasksTeacher.cleanLounge.status eq 1)>>\
 	<<set $tasksTeacher.cleanLounge.status = 2>>\
 <<endif>>\

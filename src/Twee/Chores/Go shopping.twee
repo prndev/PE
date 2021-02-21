@@ -189,7 +189,7 @@
 		<<endif>>\
 			
 		<<set $player.money+=_choreJS.reward>>\
-		<<set $time.addMinutes(_choreJS.minutes)>>\
+		<<set window.timeCode.addMinutes(_choreJS.minutes)>>\
 		<<set _choreV.dayPerformed to $time.day>>\
 	[[Recover|Go to bedroom]]
 	[[Perform other chores|Perform chores]]
@@ -411,7 +411,7 @@
 		<<endif>>\
 			
 		<<set $player.money+=_choreJS.reward>>\
-		<<set $time.addMinutes(_choreJS.minutes)>>\
+		<<set window.timeCode.addMinutes(_choreJS.minutes)>>\
 		<<set _choreV.dayPerformed to $time.day>>\
 	[[Recover|Go to bedroom]]
 	[[Perform other chores|Perform chores]]
@@ -472,7 +472,7 @@
 			[[Look at fuck machine|Trial shop][$random.stored=11]]
 			<<endif>>\
 -->\
-		<<set $time.addMinutes(_choreJS.minutes)>>\
+		<<set window.timeCode.addMinutes(_choreJS.minutes)>>\
 		<<set _choreV.dayPerformed to $time.day>>\
 <!--</Adult shop>-->\
 	<<elseif $player.shoppingType eq 4>><!--<General shop>-->\
@@ -539,7 +539,7 @@
 			@@.reward;You earned $<<print _choreJS.reward>>!@@
 		<<endif>>\
 		<<set $player.money+=_choreJS.reward>>\
-		<<set $time.addMinutes(_choreJS.minutes)>>\
+		<<set window.timeCode.addMinutes(_choreJS.minutes)>>\
 		<<set _choreV.dayPerformed to $time.day>>\
 		
 	[[Recover|Go to bedroom]]

@@ -4,7 +4,7 @@
 <<set _u=playerCode.isWearingOn(itemTypes.Underwear)>>\
 <<set _o=playerCode.isWearingOn(itemTypes.Outerwear)>>\
 <<set _c=playerCode.isWearingOn(itemTypes.Chastity)>>\
-<<set $time.addMinutes((random(2) + 1) * 10)>>\
+<<set window.timeCode.addMinutes((random(2) + 1) * 10)>>\
 <<if ($tasksTeacher.pissDrinking.status eq 1)>>\
 	You set up your phone so it's not immediately noticeable, and has a good view of an empty stall. You set it to record.
 <<endif>>\

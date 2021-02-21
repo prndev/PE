@@ -57,23 +57,6 @@
 	guardian: {
 		wakeHour: 0,
 		wakeMinute: 0,
-	},
-	weekDay: function() {
-		return this.day % 7;
-	},
-	addMinutes: function(minutes) {
-		this.minute+=minutes;
-		while (this.minute gte 60) {
-			this.addHours(1);
-			this.minute-=60;
-		}
-	},
-	addHours: function(hours) {
-		this.hour+=hours;
-		while (this.hour gte 24) {
-			this.day++;
-			this.hour-=24;
-		}
 	}
 }>>\
 \

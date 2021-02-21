@@ -38,7 +38,7 @@
     	You change back into your school clothes, hand over the maid’s uniform and head on your way.
 		
 		<<set $tasksTeacher.cleanLounge.progress ++>>\
-		<<set $time.addMinutes(60)>>\
+		<<set window.timeCode.addMinutes(60)>>\
 		<<if ($tasksTeacher.cleanLounge.status eq 1)>>\
 			<<set $tasksTeacher.cleanLounge.status = 2>>\
 		<<endif>>\

@@ -39,7 +39,7 @@
 	<<if (not _c)>>\
 	[[Put on chastity cage|Task party maid][$flags.partyMaidStarted=false; $flags.maidUniform = true]]
 	<<endif>>\
-	[[Go to Miss Juliette’s house|Task party maid][$time.addMinutes(160); $flags.partyMaidStarted=true]]
+	[[Go to Miss Juliette’s house|Task party maid][window.timeCode.addMinutes(160); $flags.partyMaidStarted=true]]
 <<elseif ($flags.partyMaidStarted)>>\
 	<div><<RandomImageFromPack "Job Maid Party" 400 400>></div>\	
 	You arrive there and knock on the door.
@@ -206,7 +206,7 @@
 	<<set $player.jobs.workedToday=true>>\
 	<<set playerCode.masturbate.cum()>>\
 	<<set $flags.exhausted=true>>\
-	[[Go home|Go to bedroom][$time.addMinutes(30); $flags.partyMaidStarted=false; $flags.partyMaidDone=true; $flags.partyMaidTask=false]]
+	[[Go home|Go to bedroom][window.timeCode.addMinutes(30); $flags.partyMaidStarted=false; $flags.partyMaidDone=true; $flags.partyMaidTask=false]]
 <<else>>\
 	<div><<RandomImageFromPack "Job Maid Facesit" 400 400>></div>\	
 	<<if (not _c)>>\

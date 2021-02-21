@@ -1,6 +1,6 @@
 ::Roxy_Date_2
 \
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <div style="float: right; margin: 10px;"><<RandomImageFromPack "Roxy" 400 400>></div>\
 Arriving at the electronic shop you find Roxy just passing her keys over to the next clerk. Out of her work uniform, she is dressed in a short skater dress and chunky Doc Martens that have her looking a little bit sexy, a little bit punk, and way hot. She turns to greet you with a smile.
 

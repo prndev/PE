@@ -4,7 +4,7 @@
 	<<if ($time.hour gte 23) or ($time.hour lt 7)>>\
 		It is getting late, so with heavy sigh you get ready to go home.
 		
-		[[Leave the club and go home|Go to bedroom][$time.addMinutes(30)]]
+		[[Leave the club and go home|Go to bedroom][window.timeCode.addMinutes(30)]]
 	<<else>>\
 		Outside the club’s doors, a lengthy queue of mostly guys waits to pay the cover charge. At the same time, ladies, alone and in groups, periodically pass the queue and head directly to the front. Once again, you take the ladies’ route, bypassing the huge wait in the line for guys.
 		
@@ -17,7 +17,7 @@
 	<<if ($time.hour >= 23) or ($time.hour < 7)>>\
 		It is getting late, so despite that you've just arrived you get ready to go home.
 		
-		[[Leave the club and go home|Go to bedroom][$time.addMinutes(30)]]
+		[[Leave the club and go home|Go to bedroom][window.timeCode.addMinutes(30)]]
 	<<else>>\
 		As evening settles, you arrive at the block where the club is. The entire street seems to resonate with energy and sound before you even lay eyes on the venue itself: an old, multistory factory hull, now resurrected, radically contemporary, and bursting with vivid motion. Graphics pulse, stream and flow across enormous displays across the front, traced in rays of neon. The rumble of dance music and the buzz of the crowds gathered at the entrance add even more to the sensational ambiance. 
 
@@ -63,7 +63,7 @@
 
 				[[Go inside|The Club][$scene="MainClub"]]
 			<<endif>>\
-		<<elseif $time.weekDay() eq 6>>\
+		<<elseif window.timeCode.weekDay() eq 6>>\
 			You recognize the big, black-suited bouncer, still keeping watch at the entrance. You flash your pink admission bracelet to him. With a nod of recognition, he directs you towards the entrance. Since today is ladies night, your bracelet gets you in for free.
 			
 			[[Go inside|The Club][$scene="MainClub"]]

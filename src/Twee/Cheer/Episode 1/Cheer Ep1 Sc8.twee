@@ -62,11 +62,11 @@ You look down at the laundry bag next to your feet. With a grunt, you sling it o
 
 <<switch $cheerleaders.cleanDone>>\
 <<case 0>>\
-	<<set $time.addMinutes(180)>>\
+	<<set window.timeCode.addMinutes(180)>>\
 <<case 1>>\
-	<<set $time.addMinutes(120)>>\
+	<<set window.timeCode.addMinutes(120)>>\
 <<case 2>>\
-	<<set $time.addMinutes(90)>>\
+	<<set window.timeCode.addMinutes(90)>>\
 <</switch>>\
 <<set $cheerleaders.progress++>>\
 <<set $player.fitness += 1>>\

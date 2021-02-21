@@ -92,6 +92,6 @@ This new perspective makes you wonder what to think about the whole thing. Maybe
 
 Still, your knees are still wobbly from all the adrenaline. You decide to take five minutes and just sit on the bench to calm down your nerves.
 
-[[Rest|Go to the mall][$time.addMinutes(10)]]
+[[Rest|Go to the mall][window.timeCode.addMinutes(10)]]
 
 

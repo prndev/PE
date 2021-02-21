@@ -67,7 +67,7 @@
 	<<endif>>\
 	<<for _i to 0; _i lt _lg; _i++>>\
 		<<set _o to coachgameList[_i]>>\
-		<<set _m to "window.coachMinigame.processAction(" + _dc.id + ", " + _o.id + ");$time.addMinutes(5)">>\
+		<<set _m to "window.coachMinigame.processAction(" + _dc.id + ", " + _o.id + ");window.timeCode.addMinutes(5)">>\
 		<<if ($flags.easyMinigames or ($player.perversion.coach gte 6)) and (_dc.id eq _o.id)>>\
 			<span class="hint">\
 			<<if $kink.futa>>\

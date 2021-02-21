@@ -918,8 +918,8 @@
 	<<endif>>\
 	<!--</reaction to bodymods>*********************-->\
 	<!--<rewards and punishments>*********************-->\
-	<<if $flags.choreReward and ($time.weekDay() gte 3) and ($player.choresPercent gte 70) and ($player.choreFailsCurrent lte 1) and (not _skipComments)>>\
-		<<if $player.perversion.guardianCorruption eq 15 and $player.perversion.guardian eq 4 and $time.weekDay() lte 4>>\
+	<<if $flags.choreReward and (window.timeCode.weekDay() gte 3) and ($player.choresPercent gte 70) and ($player.choreFailsCurrent lte 1) and (not _skipComments)>>\
+		<<if $player.perversion.guardianCorruption eq 15 and $player.perversion.guardian eq 4 and window.timeCode.weekDay() lte 4>>\
 			<<set $flags.choreReward = false>>\
 			<<set _skipEnd = true>>\
 			<<set _skipComments = true>>\
@@ -932,8 +932,8 @@
 			
 			@@.guardian;"I just wanted to ask if you are ok."@@
 			
-			[[Say that you loved it|Guardian kinky reward][$scene="strapon yes";$time.addMinutes(30); $player.perversion.guardianCorruption=18]]
-			[[Say that it was too weird|Guardian kinky reward][$scene="strapon no";$time.addMinutes(30); $player.perversion.guardianCorruption=17]]
+			[[Say that you loved it|Guardian kinky reward][$scene="strapon yes";window.timeCode.addMinutes(30); $player.perversion.guardianCorruption=18]]
+			[[Say that it was too weird|Guardian kinky reward][$scene="strapon no";window.timeCode.addMinutes(30); $player.perversion.guardianCorruption=17]]
 			
 		<<elseif $flags.gTrialStrapOn and (not $flags.guardianStrapon) and (not $flags.straponSurprise) and [5,6].includes($player.perversion.guardian)>>\	
 			<<set $flags.straponSurprise = true>>\
@@ -969,7 +969,7 @@
 
 			She says she'll figure out what to do with the skateboard and promises she'll try to find something more to your liking next time. You feel a little guilty about it, but you're genuinely thankful she went to all the effort to make you happy.
 			
-		<<elseif ($time.weekDay() eq 6) and (not $flags.choreRewCallOfHonor)>>\
+		<<elseif (window.timeCode.weekDay() eq 6) and (not $flags.choreRewCallOfHonor)>>\
 			<<set $flags.choreReward = false>>\
 			<<set $flags.choreRewCallOfHonor = true>>\
 			<<set _skipComments = true>>\
@@ -986,12 +986,12 @@
 
 			@@.hero;Hell, yeah!@@
 
-		<<elseif ($time.weekDay() eq 6) and $flags.guardianStrapon and ($player.choresPercent gte 70) and ($player.choreFailsCurrent lte 1)>>\
+		<<elseif (window.timeCode.weekDay() eq 6) and $flags.guardianStrapon and ($player.choresPercent gte 70) and ($player.choreFailsCurrent lte 1)>>\
 
 			@@.guardian;"Since you been so good this week, you can ask me to give your ass a one thorough fucking."@@
 	
 		<<endif>>\
-	<<elseif ($time.weekDay() eq 3) and ($flags.choreLazy or ($player.choreFailsCurrent gte 4))>>\
+	<<elseif (window.timeCode.weekDay() eq 3) and ($flags.choreLazy or ($player.choreFailsCurrent gte 4))>>\
 		<<if (($player.perversion.guardianCorruption eq 15 and $flags.guardianPunishVibrator) or $player.perversion.guardianCorruption eq 17) and $player.perversion.guardian eq 4>>\
 			<<set $flags.straponForced = true>>\
 		
@@ -1174,7 +1174,7 @@
 			<<endif>>\
 		<<endif>>\
 	<<endif>>
-	<<if ($time.weekDay() eq 1) and ($allowance gt 0)>>\
+	<<if (window.timeCode.weekDay() eq 1) and ($allowance gt 0)>>\
 		<<if (not $flags.choreRewAllowance) and $flags.choreReward and (random(1) eq 0)>>\
 			<<set $flags.choreRewAllowance = true>>\
 			<<set $flags.choreReward = false>>\
@@ -1278,7 +1278,7 @@
 			You <<if not window.timeCode.isWeekend()>>feel hot as you understand what she is implying. You <<endif>>turn back to her, lift your skirt and push out your butt, and are rewarded with a sound slap on your rump. You go back to your room with a hitch in your step.
 		<<endif>>\
 		<!--</breakfast finish>*********************-->\
-		<<set $time.addMinutes(30)>>\
+		<<set window.timeCode.addMinutes(30)>>\
 		<<if $player.moreBlowjobs>>\
 		
 			Your jaw feels stronger today.
@@ -1298,7 +1298,7 @@
 <<else>><!--Guardian is absent-->\
 	You go in to the kitchen and pour your favorite cereal into a bowl, \
 	add milk from the fridge, and sit at the table.  It's a bit lonely without $guardian here to talk to, and you finish eating in no time.
-	<<if ($time.weekDay() eq 1) and ($allowance gt 0)>>\
+	<<if (window.timeCode.weekDay() eq 1) and ($allowance gt 0)>>\
 
 		As you put your bowl in the sink you see a note from $guardian that says "In case I don't see you this morning, here's your weekly allowance".  Underneath the note is $<<print $allowance>>. Sweet!
 		<<set $player.money+=$allowance>>\

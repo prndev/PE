@@ -1,5 +1,5 @@
 :: comportment_bimbo_3_9
-<<set $time.addMinutes(180)>>\
+<<set window.timeCode.addMinutes(180)>>\
 <<set $player.ending.comportment.etiquette.partyStart = false>>\
 <<set $player.ending.comportment.etiquette.partyRepeat = true>>\
 You stand naked in front of $teacher, waiting for her assessment.

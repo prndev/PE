@@ -1,6 +1,6 @@
 :: Agree to extra instruction
 <<set $tuitionAmount=50*$flags.tuitionFactor>>\
-<<set $player.tuitionDiscount=(10*$time.weekDay()-10)*$flags.tuitionFactor>>\
+<<set $player.tuitionDiscount=(10*window.timeCode.weekDay()-10)*$flags.tuitionFactor>>\
 <<set _nb = $tuitionAmount-$player.tuitionDiscount>>\
 <<set $player.perversion.teacher=1>>\
 <<set $player.perversion.teacherCooldown=0>>\

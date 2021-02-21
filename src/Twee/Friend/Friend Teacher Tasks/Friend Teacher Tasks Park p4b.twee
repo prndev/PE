@@ -84,7 +84,7 @@ You change with a shrug, your heart still racing from your latest adventure and 
 <<set $friendG.tasks.timesHelped++>>\
 <<set $tasksTeacher.crossdressAtPark.status = 2>>\
 <<set $tasksTeacher.crossdressAtPark.progress++>>\
-<<run $time.addMinutes(120)>>\
+<<run window.timeCode.addMinutes(120)>>\
 <<set $friendG.wordlessGoodbye to true>>\
 <<if $player.perversion.friend < 8>>\
 	<<set $player.perversion.friend = 8>>\

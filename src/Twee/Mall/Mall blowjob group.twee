@@ -2,7 +2,7 @@
 \
 <<if window.clothes.dressedFemale() or (random(5) eq 0)>>\
 	<<set $player.blowjobsToday=$player.blowjobsToday+3>>\
-	<<set $time.addMinutes(45)>>\
+	<<set window.timeCode.addMinutes(45)>>\
 	The boys look at each other, and with nobody objecting, you all walk together to the mall toilets. You hang about at the sinks and wait for an old man to finish at the urinal, wash his hands and exit. 
 
 	One of the boys then leans with his back against the entry door, preventing anyone else from coming in, and the other two move you over to him and tell you to get started. You kneel down on the tiles and unzip his pants.

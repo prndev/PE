@@ -19,5 +19,5 @@ and head for the door, your mind totally confused. As if to highlight your mixed
 constantly teases your smooth legs and provides a constant reminder of your evening.
 
 <<set playerCode.masturbate.cum()>>\
-<<set $time.addMinutes(30)>>\
+<<set window.timeCode.addMinutes(30)>>\
 <<display [[Travel]]>>

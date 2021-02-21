@@ -75,6 +75,6 @@ You don’t want to dwell on it so you close the message and drop the phone.
 <<set playerCode.changeArousal(50)>>\
 You are still incredibly horny though and without thinking to remove the panties, decide to relieve your arousal.
 
-[[Masturbate][$time.addMinutes(20); $tasksFriend.pantieSelfie.status=2; ]]
+[[Masturbate][window.timeCode.addMinutes(20); $tasksFriend.pantieSelfie.status=2; ]]
 
  

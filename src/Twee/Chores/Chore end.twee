@@ -29,7 +29,7 @@
 		<<endif>>\
 	<<endif>>\
 	<<if (_ts/60 + $time.hour) lte 22>>\
-		<<set $time.addMinutes(_ts)>>\
+		<<set window.timeCode.addMinutes(_ts)>>\
 	<<else>>\
 		<<set $time.hour = 22>>\
 		<<set $time.minutes = random(20)>>\
@@ -72,7 +72,7 @@
 		<<set $player.choreSpeed = 1>>\
 	<<endif>>\
 	<<if (_ts/60 + $time.hour) lte 22>>\
-		<<set $time.addMinutes(_ts)>>\
+		<<set window.timeCode.addMinutes(_ts)>>\
 	<<else>>\
 		<<set $time.hour = 22>>\
 		<<set $time.minutes = random(20)>>\

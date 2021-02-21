@@ -59,43 +59,43 @@
 <<if $flags.redecorate and $time.hour lte 20 and ((not timeCode.isMonday()) or ($time.hour gte 15))>>\
 	<<if playerCode.owns(itemsC.roomGamer)>>\
 		<<if $player.room.style lte 4>>\
-			[[Decorate in gamer style|Check bedroom][$player.room.style=1;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+			[[Decorate in gamer style|Check bedroom][$player.room.style=1;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 		<<else>>\
-			[[Decorate in girl gamer style|Check bedroom][$player.room.style=6;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+			[[Decorate in girl gamer style|Check bedroom][$player.room.style=6;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 		<<endif>>\
 	<<endif>>\
 	<<if playerCode.owns(itemsC.roomPunk)>>\
 		<<if $player.room.style lte 4>>\
-			[[Decorate in punk style|Check bedroom][$player.room.style=2;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+			[[Decorate in punk style|Check bedroom][$player.room.style=2;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 		<<else>>\
-			[[Decorate in punky style|Check bedroom][$player.room.style=7;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+			[[Decorate in punky style|Check bedroom][$player.room.style=7;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 		<<endif>>\
 	<<endif>>\
 	<<if playerCode.owns(itemsC.roomGeek)>>\
 		<<if $player.room.style lte 4>>\
-			[[Decorate in geeky style|Check bedroom][$player.room.style=3;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+			[[Decorate in geeky style|Check bedroom][$player.room.style=3;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 		<<else>>\
-			[[Decorate in geeky style|Check bedroom][$player.room.style=8;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+			[[Decorate in geeky style|Check bedroom][$player.room.style=8;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 		<<endif>>\
 	<<endif>>\
 	<<if playerCode.owns(itemsC.roomSport)>>\
 		<<if $player.room.style lte 4>>\
-			[[Decorate in sport style|Check bedroom][$player.room.style=4;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+			[[Decorate in sport style|Check bedroom][$player.room.style=4;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 		<<else>>\
-			[[Decorate in cheerleaders style|Check bedroom][$player.room.style=9;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+			[[Decorate in cheerleaders style|Check bedroom][$player.room.style=9;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 		<<endif>>\
 	<<endif>>\
 	<<if playerCode.owns(itemsC.roomGirly)>>\
-		[[Decorate in girly girl style|Check bedroom][$player.room.style=10;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+		[[Decorate in girly girl style|Check bedroom][$player.room.style=10;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 	<<endif>>\
 	<<if $flags.roomFuschia>>\
-		[[Decorate in bright colorful style|Check bedroom][$player.room.style=11;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+		[[Decorate in bright colorful style|Check bedroom][$player.room.style=11;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 	<<endif>>\
 	<<if $flags.roomOrchid>>\
-		[[Decorate in flowery style|Check bedroom][$player.room.style=12;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+		[[Decorate in flowery style|Check bedroom][$player.room.style=12;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 	<<endif>>\
 	<<if $flags.roomBdsm>>\
-		[[Decorate in bdsm style|Check bedroom][$player.room.style=13;$time.addHours(2);$player.room.junk=[]]] (2 hours)
+		[[Decorate in bdsm style|Check bedroom][$player.room.style=13;window.timeCode.addHours(2);$player.room.junk=[]]] (2 hours)
 	<<endif>>\
 	<<print '<<click "Basic lamp: black">><<set $player.room.lamp=0>><<replace "#room_window">><<display "Check bedroom">><</replace>><</click>>'>> @@.worn;-@@ \
 	<<print '<<click "red">><<set $player.room.lamp=1>><<replace "#room_window">><<display "Check bedroom">><</replace>><</click>>'>> @@.worn;-@@ \

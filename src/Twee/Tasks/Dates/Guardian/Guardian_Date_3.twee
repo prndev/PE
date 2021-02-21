@@ -81,7 +81,7 @@ Double checking that everything is cooked through you gather things up and head 
 			
 		<<endif>>
 		<<set $tasksTeacher.goOnDate.status = 2>>\
-		<<set $time.addMinutes(90)>>\
+		<<set window.timeCode.addMinutes(90)>>\
     	[[Go to bedroom]]
 	<</if>>\
 <</if>>\

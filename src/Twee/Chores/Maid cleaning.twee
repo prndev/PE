@@ -246,7 +246,7 @@ A tight corset prevents you from taking full breaths, and forces you to adopt an
 		@@.hero;This is going to be awkward.@@
 		
 		<<set _noDefaultEnd to true>>\
-		<<set $time.addMinutes(choresList.maidCleaning.minutes)>>\
+		<<set window.timeCode.addMinutes(choresList.maidCleaning.minutes)>>\
 		<<set _choreV.dayPerformed to $time.day>>\
 		[[Pick up the phone|Guardian boyfriend scene][$scene="phone"]]
 	<<endif>>\

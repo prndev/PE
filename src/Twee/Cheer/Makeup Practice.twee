@@ -102,5 +102,5 @@ As promised by Rachel, all you do is run. Occasionally you sneak a peek at the s
 
 <<set $cheerleaders.flags.skippedPractice = false>>\
 <<set $cheerleaders.flags.madeUpPractice = true>>\
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<display [[Travel]]>>

@@ -27,6 +27,6 @@ You decide to head home to edit the video, so you say goodbye. \
 	<<set $tasksTeacher.getHitOn.status to 2>>\
 <<endif>>\
 
-[[Return home|Go to bedroom][$time.addMinutes(30)]]
+[[Return home|Go to bedroom][window.timeCode.addMinutes(30)]]
 
 

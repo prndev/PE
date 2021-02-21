@@ -63,5 +63,5 @@ If you saw a hot girl dancing like this, you’re sure you’d be tenting your s
 	your growing erection as you watch yourself writhe in the mirror all the more concerning.
 <<endif>>\
 
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 [[Stop practicing|Go to bedroom][$player.fitness += 1, $cheerleaders.game.practiced = true]]

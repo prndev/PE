@@ -10,7 +10,7 @@
 <<elseif $time.hour >= 23>>\
 	It is getting late, so with heavy sigh you get ready to go home.
 	
-	[[Leave the club and go home|Go to bedroom][$time.addMinutes(30)]]
+	[[Leave the club and go home|Go to bedroom][window.timeCode.addMinutes(30)]]
 <<elseif $scene eq "clubRestroom">>\
 	The club ladies’ room is a relatively large and spacious bathroom with numerous stalls, whose doors open towards a long, granite vanity counter full of sinks and a mirror filling most of the wall. The regular flow of ladies coming in and out of the room makes it a frequently crowded location, but it’s uncommonly tidy, owing to the high caliber of the club’s housekeeping staff.
 

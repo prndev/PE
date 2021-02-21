@@ -1,6 +1,6 @@
 :: Cheer SE2 Sc1
 <<set $player.location = locationsJS.mall.id>>\
-<<set $time.addMinutes(35)>>\
+<<set window.timeCode.addMinutes(35)>>\
 <div style="float: right; margin: 10px;"><<RandomImageFromPack "Mall Inside" 400 400>></div>\
 @@.heroT;“You just wanted to go to the mall?”@@ you ask as you and $cheerFriend.name walk into the mall after school.
 

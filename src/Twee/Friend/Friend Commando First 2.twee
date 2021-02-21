@@ -84,7 +84,7 @@ You gasp as $friend reaches between your legs, grips the seat handle, and pulls.
 	<<endif>>\
 <<endif>>\
 <<set $friendG.noUnderwear = 1>>\
-<<set $time.addMinutes(90)>>\
+<<set window.timeCode.addMinutes(90)>>\
 <<addToInv stockings 74>>\
 <<addToInv braSexy 74>>\
 <<addToInv gString 74>>\

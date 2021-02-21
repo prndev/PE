@@ -3,8 +3,8 @@
 <<set _c=playerCode.isWearingOn(itemTypes.Chastity)>>\
 <<if $flags.choreRewCallOfHonor and (not $flags.newCallOfHonorPlayed)>>\
 	<<set $flags.newCallOfHonorPlayed = true>>\
-	<<set $time.addMinutes(60 - $time.minute)>>\
-	<<set $time.addHours(Math.min(3, 23 - $time.hour))>>\
+	<<set window.timeCode.addMinutes(60 - $time.minute)>>\
+	<<set window.timeCode.addHours(Math.min(3, 23 - $time.hour))>>\
 	<<if $flags.canGame>>\
 		<<set _gr = playerCode.improveGameSkill()>>\
 	<<endif>>\
@@ -34,8 +34,8 @@
 	<<set $flags.PSBoxAnnoyed = true>>\
 	You have a look at your PSBox games and pick random one to distract yourself from the relentless tide of lewd fantasies on your mind.
 	
-	<<set $time.addMinutes(60 - $time.minute)>>\
-	<<set $time.addHours(Math.min(3, 23 - $time.hour))>>\
+	<<set window.timeCode.addMinutes(60 - $time.minute)>>\
+	<<set window.timeCode.addHours(Math.min(3, 23 - $time.hour))>>\
 	<<if $flags.canGame>>\
 		<<set _gr = playerCode.improveGameSkill()>>\
 	<<endif>>\
@@ -75,8 +75,8 @@
 	
 <<else>>\
 	<div><<RandomImageFromPack "Call Of Duty" 400 400>></div>\	
-	<<set $time.addMinutes(60 - $time.minute)>>\
-	<<set $time.addHours(Math.min(3, 23 - $time.hour))>>\
+	<<set window.timeCode.addMinutes(60 - $time.minute)>>\
+	<<set window.timeCode.addHours(Math.min(3, 23 - $time.hour))>>\
 	<<if $flags.canGame>>\
 		<<set _gr = playerCode.improveGameSkill()>>\
 	<<endif>>\

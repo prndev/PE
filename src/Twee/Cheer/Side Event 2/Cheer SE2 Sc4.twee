@@ -38,5 +38,5 @@ $cheerFriend.name walks off, waving goodbye as she exits the doors of the mall. 
 
 <<set $cheerFriend.progress +=1>>\
 <<set $cheerFriend.currentSE = 0>>\
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<display [[Travel]]>>

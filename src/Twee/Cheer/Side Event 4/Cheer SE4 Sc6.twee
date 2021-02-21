@@ -57,5 +57,5 @@ She climbs into the driver seat of her car, giving you a quick wave through the 
 
 <<set $cheerFriend.currentSE = 0>>\
 <<set $cheerFriend.progress += 1>>\
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<display [[Travel]]>>

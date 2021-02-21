@@ -189,7 +189,7 @@
 			<<if _timeOnArrivalMin lt 10>>\
 				<<set _timeOnArrivalMin="0"+_timeOnArrivalMin>>\
 			<<endif>>\
-			<div class="tooltip"><<print "[[_description|_destination][$time.addMinutes("+_time+"); $player.location = \""+_to.id+"\"]]">> <span id="test_surv" class="tooltiptext">It will take <<print _time>> minutes (to <<print _timeOnArrivalHour>>:<<print _timeOnArrivalMin>>)</span></div>\
+			<div class="tooltip"><<print "[[_description|_destination][window.timeCode.addMinutes("+_time+"); $player.location = \""+_to.id+"\"]]">> <span id="test_surv" class="tooltiptext">It will take <<print _time>> minutes (to <<print _timeOnArrivalHour>>:<<print _timeOnArrivalMin>>)</span></div>\
 		<<else>>\
 			<div class="tooltip">@@.halftransparent;<<print _description>>@@ <span id="test_surv" class="tooltiptext"><<print _reason>></span></div>\
 		<<endif>>\

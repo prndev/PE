@@ -570,19 +570,19 @@
 	\
 	<<case "ExitHome">>\
 		<<set document.getElementById("ui-bar").style.display to "block">>\
-		<<set $time.addMinutes(110)>>\
+		<<set window.timeCode.addMinutes(110)>>\
 		<<set UI.unstow()>>\
 		<<goto [[Go to bedroom]]>>\
 	\
 	<<case "ExitClub">>\
 		<<set document.getElementById("ui-bar").style.display to "block">>\
-		<<set $time.addMinutes(5)>>\
+		<<set window.timeCode.addMinutes(5)>>\
 		<<set UI.unstow()>>\
 		<<goto [[The Club]]>>
 	\
 	<<case "ExitClubLong">>\
 		<<set document.getElementById("ui-bar").style.display to "block">>\
-		<<set $time.addMinutes(45)>>\
+		<<set window.timeCode.addMinutes(45)>>\
 		<<set UI.unstow()>>\
 		<<goto [[The Club]]>>
 	\

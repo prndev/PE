@@ -43,6 +43,6 @@ $teacher clicks the remote once again to prompt you to respond through the speak
 
 You lay there for several minutes alone before you realize that she must expect you to do the rest of the work freeing yourself. With a gag-muffled sigh, you reach across to your other wrist, freeing your hands, and then reach down to deal with your ankles. Stiff and stretched, it takes what feels like an eternity for you to remove the rest of your attire, and wonder what to do with the outfit, you notice a note indicating you should leave everything on the bed before changing into your original clothes and heading home.  Without any other guidance, you do as the note tells you.
 
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<set $player.ending.comportment.classStatus[2] = 5>>\
 <<display [[Travel]]>>

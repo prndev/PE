@@ -49,7 +49,7 @@ $cheerFriend.name glares at you with a look of feigned irritation.
 @@.cheerFriend;“So, now that we’re safe from psycho girl, where do you want me to drop you off? I can take you pretty much anywhere.”@@
 
 <<set $cheerleaders.progress = 4>>\
-<<set $time.addMinutes(75)>>\
+<<set window.timeCode.addMinutes(75)>>\
 <<set $player.fitness += 1>>\
 <<set $cheerleaders.canPractice to false>>\
 <<display [[Travel]]>>

@@ -68,6 +68,6 @@ You grab your phone and give your muscles one last stretch before walking inside
 @@.reward;Your skill at cheerleading has increased!@@
 
 <<set $player.fitness++>>\
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<set $cheerleaders.canPractice = false>>\
 [[Return to your room|Go to bedroom]]
