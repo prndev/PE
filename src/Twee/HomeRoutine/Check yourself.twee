@@ -120,7 +120,7 @@
 	<<default>>\
 		You love how your hair is so soft. Almost instinctively, you run your hands through your hair, and the gesture is so damn sexy.
 	<</switch>>\
-	\
+\
 <<elseif ($body.hairstyle eq 4)>>\
 	<<set _item=itemsC.HairPigtails>>\
 	<<set _word="@@.info;two frilly pigtails@@">>\
@@ -841,7 +841,7 @@
 	<<default>>\
 		It feels so nice and comfortable that you don't want to take it off.
 	<</switch>>\
-	\		
+\		
 <<elseif playerCode.isWearing(itemsC.skirtTop)>>\
 	&#9702; You're wearing a separates outfit with skirt and top, hugging you in a stylish and feminine fit. Your\
 	<<if ($body.boobs eq 4)>>\
@@ -864,7 +864,7 @@
 	<<default>>\
 		You can't help but feel sexy in the fashionable combo, and it shows off your body very well.
 	<</switch>>\
-	\				
+\				
 <<elseif playerCode.isWearing(itemsC.sluttyschoolFemale)>>\
 	&#9702; You're wearing a fetish version of a schoolgirl outfit. The blouse is too small for you and only barely covers your\
 	<<if ($body.boobs eq 4)>>\
@@ -887,7 +887,7 @@
 	<<default>>\
 		It's scandalous, daring, and has far more sass than any school can handle, but it's one damn sexy dress.
 	<</switch>>\
-	\				
+\				
 <<elseif playerCode.isWearing(itemsC.sluttyDress)>>\
 	&#9702; You are wearing a very revealing dress.\
 	<<if ($body.boobs eq 4)>>\
@@ -1588,7 +1588,7 @@
 					@@.hero;It is so big... I love the way it rubs up inside me when I walk.@@
 				<<endif>>\
 			<<elseif playerCode.isWearing(itemsC.buttPlugVibro)>>\
-				&#9702; The vibro butt-plug buzzes in your asshole slowly massaging your prostate.\
+				&#9702; The vibro butt-plug buzzes in your asshole slowly massaging your prostate.
 			<<endif>>\
 		<<elseif playerCode.isHalfHorny()>>\
 			your half-hard <<print _penis>> presses against your <<print _in>>.\
@@ -1676,7 +1676,7 @@
 				@@.hero;I'm completely at the mercy of someone else to unlock me if I ever want to touch my <<print _penis>>. It makes me feel a little excited.@@
 			<<endif>>\	
 			<<if playerCode.isWearing(itemsC.buttPlugHeart)>>\
-				&#9702; A small butt-plug sits tightly in your asshole, pressing on your prostate.\
+				&#9702; A small butt-plug sits tightly in your asshole, pressing on your prostate.
 				<<if playerCode.isMind_0(true)>>\
 					@@.hero;This is humiliating, but… in a good way?@@
 				<<elseif playerCode.isMind_1(true)>>\
@@ -1694,7 +1694,7 @@
 					@@.hero;It constantly reminds me of what a pathetic sissy I am, and everything I gave away. But somehow it feels right and natural, like I deserve this.@@
 				<<endif>>\
 			<<elseif playerCode.isWearing(itemsC.buttPlugVibro)>>\
-				&#9702; The vibro butt-plug buzzes in your asshole.\
+				&#9702; The vibro butt-plug buzzes in your asshole.
 			<<endif>>\
 		<<elseif playerCode.isHalfHorny()>>\
 			your half-hard <<print _penis>> presses against the inside of your <<print _in>>, but you no longer have the key to unlock it. Feelings of dread go through you as you realize that it will only get worse.\
@@ -1708,7 +1708,7 @@
 			<<if playerCode.isWearing(itemsC.buttPlugHeart)>>\
 				&#9702; A small butt-plug sits tightly in your asshole, pressing on your prostate, reminding you of where your choices have brought you.\
 				<<if playerCode.isMind_0(true)>>\
-					@@.hero;This only makes it harder… or does it make me harder?@@
+					@@.hero;This only makes it harder… the ordeal… or my erection?@@
 				<<elseif playerCode.isMind_1(true)>>\
 					@@.hero;The plug makes it worse... but why does it feel so right to have it in? @@
 				<<else>>\
@@ -1853,8 +1853,6 @@
 						barely \
 					<<endif>>\
 					visible stains.
-				<<else>>\
-
 				<<endif>>\
 			<<endif>>\
 		<<endif>>\
@@ -1880,8 +1878,6 @@
 				barely \
 			<<endif>>\
 			visible stains.
-		<<else>>\
-
 		<<endif>>\
 	<<endif>>\
 <<endif>>\
@@ -1919,8 +1915,6 @@
 						barely \
 					<<endif>>\
 					visible stains.
-				<<else>>\
-
 				<<endif>>\
 			<<endif>>\
 		<<endif>>\
@@ -1939,8 +1933,6 @@
 				barely \
 			<<endif>>\
 			visible stains. /*@@.hero;This is so humiliating.@@*/
-		<<else>>\
-
 		<<endif>>\
 	<<endif>>\
 <<endif>>\
@@ -1993,7 +1985,7 @@
 			<<endif>>\
 			<<print _penis>> is locked in its chastity cage, and isn't noticeable under your skirt... unless something flips up your skirt, that is.\
 			<<if playerCode.isWearingOn(itemTypes.AnalPlug)>>\
-				Your leaking precum slowly soaks your underwear. @@.hero;This is so humiliating.@@
+				Your leaking precum slowly soaks your underwear. /*@@.hero;This is so humiliating.@@*/
 			<<else>>\
 			<<endif>>\
 		<<endif>>\
@@ -2066,7 +2058,7 @@
 				<<else>>\
 					thighs.
 				<<endif>>\
-				@@.hero;This is so humiliating.@@
+				/*@@.hero;This is so humiliating.@@*/\
 			<<endif>>\
 		<<endif>>\
 	<<endif>>\
@@ -2202,13 +2194,13 @@
 				Without underwear, your semi-erect <<print _penis>> makes an obvious bulge against the front of your dress, letting everyone see that you have male parts and are very turned on.\
 			<<endif>>\
 			<<if playerCode.isMind_0(true)>>\
-				@@.hero;It's so humiliating.@@
+				@@.hero;It's so humiliating.@@\
 			<<elseif playerCode.isMind_1(true)>>\
-				@@.hero;This is embarrassing.@@
+				@@.hero;This is embarrassing.@@\
 			<<else>>\
-				@@.hero;This is so inappropriate.@@
+				@@.hero;This is so inappropriate.@@\
 			<<endif>>\
-			However, it actually feels nice to be noticed at all.\
+			However, it actually feels nice to be noticed at all.
 			<<if playerCode.isWearingOn(itemTypes.AnalPlug)>>\
 				&#9702; Precum drips down your thighs, leaving noticeable traces on your skin.\
 				<<if playerCode.isWearing(itemsC.stockings) or playerCode.isWearing(itemsC.stockingsLatex)>>\
@@ -2265,7 +2257,7 @@
 				<<if playerCode.isWearing(itemsC.stockings) or playerCode.isWearing(itemsC.stockingsLatex)>>\
 					It also stains on your stockings.\
 				<<endif>>\
-				@@.hero;This is so humiliating.@@
+				/*@@.hero;This is so humiliating.@@*/
 			<<endif>>\
 		<<endif>>\
 	<<endif>>\
@@ -2280,7 +2272,7 @@
 	<<endif>>\
 <<endif>>\
 <!--</pants, skirt>-->\
-
+\
 <!--<footwear>-->\
 <<if playerCode.isWearing(itemsC.sneakers)>>\
 	&#9702; On your feet, you wear regular sneakers.\

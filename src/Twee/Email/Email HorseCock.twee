@@ -9,11 +9,11 @@
 		<<set $tasksEmail.WebcamHorseCock.progress = 0>>\
 		<div><<RandomImageFromPack "Horse Dildo" 400 400>></div>\
 		You set up your camera phone to record, and attach the horse dildo to the floor.
-		<<if playerCode.isMind_0()>>\
+		<<if playerCode.isMind_0(true)>>\
 			You slowly lower yourself onto it. To your shame this monstrous toy easily slides into your gaping anus. Your cheeks burns as you realize that this degrading toy feels better than your normal dildos.
 			
 			@@.hero;I can't believe I'm recording myself doing this...@@\
-		<<elseif playerCode.isMind_1()>>\
+		<<elseif playerCode.isMind_1(true)>>\
 			You slowly lower yourself onto it. To your shame this monstrous toy easily slides into your gaping anus. Your cheeks burns as you realize that this degrading toy feels better than your normal dildos. You can't stop yourself from moaning a bit as it slides up inside you.
 			
 			@@.hero;Why does it feel so good?@@\
