@@ -1,0 +1,69 @@
+:: Therapist stimulation preference reassignment intro
+<<if not playerCode.isButtslut()>>\
+This scene requires the player character to be a butt-slutt. This is a bug.
+<<endif>>\
+\
+You mention that you rarely use your penis anymore.
+
+@@.therapist;"Why does that bother you?"@@
+
+You squirm in your seat, the question making you feel uncomfortable. 
+
+@@.heroT;"It is frustrating."@@
+
+@@.therapist;"How about the 'Sissy Trainer'? Haven't you learned to get relief without touching your penis?"@@
+
+@@.heroT;"Well… yes, I have."@@
+
+@@.therapist;"And those anal orgasms? Are they good?"@@
+
+<<switch playerCode.isMind()>>\
+	<<case 0>>You blush. @@.heroT;"They are… okay, I guess. But Humiliating. A boy should not cum from having something up his ass."@@
+	<<case 1>>@@.heroT;"They feel… fine. Maybe everyone should try anal at least once."@@ You guess.
+	<<case 2>>@@.heroT;"Actually, they feel fantastic."@@ You bite your lip just thinking about the last time you came from anal.
+<</switch>>\
+
+@@.therapist;"Well you are locked away most of the time, hence you <i>cannot</i> use your penis. Yet after all you have been through, you still <i>want</i> to?"@@
+
+You nod, but you feel uneasy. You notice $therapist might have found a contradiction in your inner desires.
+
+@@.therapist;"Can you describe your feelings, not being able to use your penis?"@@
+
+@@.heroT;"It's just… I do so many very sexual things, yet I feel I am missing out on something."@@
+
+@@.therapist;"Of course."@@ She answers and thinks for a short while.\
+\
+/* check for any kink which may allow this actual scene to be played */\
+<<set _possible = $kinkAllow.bdsm or $kinkAllow.bondage or $kinkAllow.painPlay or $kinkAllow.questionable or $kinkAllow.abusive>>\
+<<if $kink.bdsm>>\
+	<<set _sufficientKink = "BDSM">>\
+<<elseif $kink.bondage>>>\
+	<<set _sufficientKink = "bondage">>\
+<<elseif $kink.painPlay>>\
+	<<set _sufficientKink = "pain play">>\
+<<elseif $kink.questionable>>\
+	<<set _sufficientKink = "questionable consent">>\
+<<elseif $kink.abusive>>\
+	<<set _sufficientKink = "abusive behaviour">>\
+<<endif>>\
+\
+@@.therapist;"I expected you would raise this issue eventually. That is why I devised a therapy method to help you.\
+<<if not _sufficientKink>>\
+	Unfortunately, you are not ready for\
+	<<if _possible>>\
+		it, yet. We should explore other parts of your personality, first.\
+	<<else>>\
+		it. And based on the survey we took on our very first session, you never will be.\
+	<<endif>>\
+<<else>>\
+	It is based on your particular interest in _sufficientKink. It will most likely help you instantly. The effect lasts at least a week. However, I will not be performing the procedure myself. You will have to see a specialist.\
+<<endif>>\
+"@@
+<<if _sufficientKink and _possible>>\
+
+$therapist hands you a piece of paper. The address is $guardian's place of work.
+<<set $stimulationPreferenceTherapy = "enabled">>\
+/* TODO: check if this talk stays available until PC is either ready or will never be */
+<<endif>>\
+
+[[Talk about something else|Visit therapist][$flags.therapistTalk=true]]
