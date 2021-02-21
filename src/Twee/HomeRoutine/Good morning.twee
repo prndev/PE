@@ -557,7 +557,7 @@ Noticing your worried face at her angry outburst, she quickly reassures you.
 	
 	[[Have breakfast]] 
 	<<if (not $flags.dreamgameCaught)>>\
-		<<print "[[Peep on "+$guardian+" while she's sleeping|Peep on guardian]]">>
+		<<print "[[Peep on "+$guardian+" while she's sleeping|Peep on guardian][window.dreamMinigame.reset()]]">>
 	<<endif>>\
 	<!--</alarm>-->\
 <<elseif $flags.clubHangover>>\
