@@ -19,6 +19,7 @@ Please also see setupKinks in structures.js
 */\
 <<set $kink = $kinkAllow >>\
 \
+''prndev's mods – preview''
 <span id="sidebar_time"></span><<updateTime>>
 \
 <<if $time.day gt 0>>\
