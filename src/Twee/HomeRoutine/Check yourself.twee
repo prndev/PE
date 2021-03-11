@@ -1027,10 +1027,8 @@
 	<<case 4>>your massive breasts are permanent.\
 	<<default>>\
 	<</switch>>\
-	<<if ($body.permBoobs gt 0)>>\
+	<<if $body.permBoobs gt 0 and ($body.semiBoobs gt $body.permBoobs)>>\
 		Also \
-	<<endif>>\
-	<<if ($body.semiBoobs gt $body.permBoobs)>>\
 		<<switch $body.semiBoobs>>\
 		<<case 1>>small breasts will remain\
 		<<case 2>>average sized breasts will remain\
@@ -1457,6 +1455,7 @@
 			<<endif>>\
 		<<elseif playerCode.isWearing(itemsC.buttPlugVibro)>>\
 			&#9702; The vibro butt-plug buzzes in your asshole, casually arousing you. Slowly, blood is rushing towards your hardening boner.\
+			<<switch playerCode.isMind(true)>>\
 			<<case 0>>\
 				@@.hero;At least takes a while until it gets me horny again.@@
 			<<case 1>>\
