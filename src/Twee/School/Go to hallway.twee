@@ -55,10 +55,10 @@
 		
 <<endif>>\
 <<if $player.perversion.teacher eq 6>>\
-	<<if $player.daringFlag.stunBully>>\
+	<<if $player.daringFlag.stunBully or $player.daringFlag.overwhelmBully>>\
 		<<set $player.perversion.teacher to 7>>\
 		<<set $player.perversion.teacherCooldown = 0>>\
-		$teacher glares at you for a few seconds, then says @@.teacher;"I heard about what happened to those $futa.boys_girls I told you to look after. It seems they were assaulted with a stun gun in the $futa.boys_girls' toilets. They refused to say who did it, so even though I am pretty sure it was you, you are in the clear."@@
+		$teacher glares at you for a few seconds, then says @@.teacher;"I heard about what happened to those $futa.boys_girls I told you to look after. <<if $player.daringFlag.overwhelmBully>>It seems they bit off more than they could chew. They refused to say happened in detail, so even though I am pretty sure it involved your person, you are in the clear.<<else>>It seems they were assaulted with a stun gun in the $futa.boys_girls' toilets. They refused to say who did it, so even though I am pretty sure it was you, you are in the clear.<<endif>>"@@
 		
 		She relaxes and smiles. @@.teacher;"Actually, all the teachers agreed that it might be good for them, and hopefully will make them less annoying to the girls and other teachers."@@
 		

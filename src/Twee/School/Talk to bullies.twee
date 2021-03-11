@@ -21,6 +21,7 @@
 		[[Refuse and go to class|Go to class]]
 		<<if playerCode.owns(itemsC.stunGun)>>\
 		[[Stun the bullies]]
+		<div class="tooltip"><<print '[[Overwhelm '+$bully+'|Overwhelm bully]]'>><span id="test_surv" class="tooltiptext">Now that you have the stun-gun, you feel empowered enough to try a non-violent option first</span></div>/* this scene actually relies on anal experience, but prndev was not sure how that would affect the overall progress mechanics */
 		<<endif>>\
 	<<else>>\
 		<<if $kink.futa>>\
