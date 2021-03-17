@@ -41,7 +41,7 @@
 		<<set _before="">>\
 		<<set _tf=1>>/*Time for message before sleep*/\
 		<<set _ti=$time.day>>\
-		<<set _te=$player.masturbate.lastDay>>\
+		<<set _te=$player.masturbate.last.day>>\
 		<<set _tt=_ti - _te - 5>>\
 		<<if _tt lt 1>>\
 			<<set _tt=1>>\
@@ -136,9 +136,6 @@
 			<<set document.getElementById('dreamImage_1').className="dream_image_fade">>\
 		<<next 2s>>\
 			<<set document.getElementById('sleepAltOptions').className="hidden">>\
-			<<if playerCode.isWearingOn(itemTypes.Chastity) and ($player.exp.chastityExp lt 100)>>\
-				<<set $player.exp.chastityExp++>>\
-			<<endif>>\
 			<<if _dream.once>>\
 				<<set $dreams[_dream.id].progress=1>>\
 			<<endif>>\
@@ -187,4 +184,7 @@
 		<<set window.timeCode.newDay()>>\
 		<<display [[Good morning]]>>\
 	<<endif>>\
+<<endif>>\
+<<if playerCode.isWearingOn(itemTypes.Chastity) and ($player.exp.chastityExp lt 100)>>\
+	<<set $player.exp.chastityExp++>>\
 <<endif>>\

@@ -38,15 +38,13 @@
 	<<endif>>\
 <<endif>>\
 \
-<<if ($tasksTeacher.trialChastity.status eq 4) and ($player.exp.chastityExp gte 3) and playerCode.isWearingOn(itemTypes.Chastity)>>\
-	<<set $tasksTeacher.trialChastity.status = 6>>\
-<<elseif ($tasksTeacher.trialChastity.status eq 6) and ($player.exp.chastityExp gte 3) and playerCode.isWearingOn(itemTypes.Chastity)>>\
+<<if ($tasksTeacher.trialChastity.progress == 1) and ($player.exp.chastityExp gte 3) and playerCode.isWearingOn(itemTypes.Chastity)>>\
+	<<set $tasksTeacher.trialChastity.progress to 4>>\
 
 	You've slept well, despite wearing a chastity cage. You can't believe how quickly you got used to it.
 	
-	@@.info;It's time to return the device to receive your pay.@@
+	@@.info;It's time to return the device to receive your pay.<<if $flags.chastityKey>> – At least as soon as you can unlock it.<<endif>>@@
 
-	<<set $tasksTeacher.trialChastity.status = 5>>\
 	/*<<set $tasksTeacher.trialChastity.text.checkMe.reminder = "You completed the trial, now you should return the device to the shop.">>*/\
 <<endif>>\
 <<if $kinkAllow.penisShrink and $flags.penisShrinkSleep and ($flags.penisShrinkProgress gte 1) and ($body.penisShrink eq 1) and $time.weekDay() eq 5>>\
@@ -170,17 +168,17 @@
 	<<set $time.guardian.wakeHour to 7>>\
 	<<set $player.perversion.guardianCooldown to 1>>\
 	<<set $player.perversion.guardian to 4>>\
-	<<set $player.masturbationType = 0>>\
+	<<set $player.masturbationType to {}>>\
 	<<if (not playerCode.owns(itemsC.vibrator))>>\
 		<<addToInv 'vibrator'>>\
 	<<endif>>\
 	Your eyes slowly open. $Guardian is shaking you awake, looking down at you sternly.
 
-	@@.guardian;"We need to talk. I'd hoped that it was just a phase, but you've shown that you're willing to take your fetishes way further than I expected. Locking yourself in chastity, sticking a vibrator up your ass, and god knows what else you've been up to...."@@
+	@@.guardian;"We need to talk. I'd hoped that it was just a phase, but you've shown that you're willing to take your fetishes way further than I expected. Locking yourself in chastity, sticking a vibrator up your ass, and god knows what else you've been up to...<<if not $flags.playerChoseChastity>>"@@
 	
 	You don't dare tell her that being in chastity wasn't your decision.
 	
-	@@.guardian;"It seems you're just asking to be treated accordingly. I've installed a camera in your room so I can monitor you, just in case your fetishes become a danger to your health. Don't even try to obscure the view, or I will come up with something even more inconvenient for you."@@
+	@@.guardian;"<<else>> <<endif>>It seems you're just asking to be treated accordingly. I've installed a camera in your room so I can monitor you, just in case your fetishes become a danger to your health. Don't even try to obscure the view, or I will come up with something even more inconvenient for you."@@
 	
 	When you try to argue that you need at least some privacy, $guardian interrupts you again.
 	
@@ -785,3 +783,4 @@ Noticing your worried face at her angry outburst, she quickly reassures you.
 	<!--</default morning>-->\
 <<endif>>\
 <!--</Waking up>-->\
+

@@ -254,6 +254,16 @@ window.therapistTalks={
 		check: function() {
 			return State.active.variables.kinkAllow.penisShrink;
 		}
+	},
+	talkButsluttery: {
+		id: "talkButsluttery",
+		name: "Talk about not using your penis for pleasure",
+		passage: "talkButsluttery",
+		time: 5,
+		start: true,
+		check: function() {
+			return playerCode.isButtslut();
+		}
 	}
 },
 

@@ -44,6 +44,23 @@ window.timeCode={
 			time.hour=Math.min(time.hour+hours, max);
 		}
 	},
+	rollover : function(time) {
+		while (time.minute >= 60) {
+			time.hour++;
+			time.minute-=60;
+		}
+		while (time.hour >= 24) {
+			time.day++;
+			time.hour-=24;
+		}
+	},
+	minutesSince : function(earlier,later) {
+		return (later.day * 1440 + later.hour * 60 + later.minute) - (earlier.day * 1440 + earlier.hour * 60 + earlier.minute);
+	},
+	currentTime : function() {
+		var time=State.active.variables.time;
+		return { day : time.day, hour: time.hour, minute: time.minute };
+	},
 	newDay: function() {
 		var time=State.active.variables.time;
 		var player=State.active.variables.player;
@@ -216,5 +233,5 @@ window.timeCode={
 		} else {
 			return "It's the weekend, so no school today.";
 		}
-	},
+	}
 }
