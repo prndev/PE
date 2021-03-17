@@ -202,6 +202,38 @@ window.dreamsGuardian={
 			return [4,5,6,7].includes(State.active.variables.player.perversion.guardian);
 		}
 	},
+	GuardianMoisturizer: {
+		id: "GuardianMoisturizer",
+		name: "GuardianMoisturizer",
+		image: "",
+		imagePack: "dream",
+		imagePack_final: "dream x",
+		hasPassage: false,
+		active: true,
+		once: false,
+		chance: 10,
+		highestStartPriority: 0,
+		description: "$guardian is in front of the bathroom mirror, getting ready for the day. The fiddles around with a bottle, pushing the dispenser, but the bottle is empty.\n\n@@.guardiandream;“The moisturizer is empty.”@@ she says as she turns to you.\n\nYou suddenly realize that, for some reason, you are naked. $guardian bends down to examine your ball-sack.\n\n@@.guardiandream;“But this are nice and full.”@@ she comments while massaging your balls. @@.guardiandream;“When did you last cum?”@@\n\n“<<print window.timeCode.minutesToStr(playerCode.masturbate.sinceLastCum())>>” you answer truthfully.\n\n@@.guardiandream;“<<if playerCode.masturbate.sinceLastCum() > 2880>>Good. It works best when they are full and ripe.<<else>>That will have to do.<<endif>>”@@\n\n$guardian caresses your caged cock with one hand while positioing the other below, then she squeezes your cage twice. Each time, you can feel your penis pulse, and you spurt a white substance into her hand. Then, $guardian proceeds to apply your personally delivered moisurizer to her face and hands.\n\nIn the cupboard, you notice a strange bottle; its curved dispenser looks very similar to your chastity device. Guardian finishes moistuerizing and then gives you the empty bottle and a dildo.\n\n@@.guardiandream;“Sweetie, please fill up the bottle for me while I am away, will you?”@@\n\nShe kisses you on the forehead and leaves. Your penis twitches in anticipation, looking forward to the anal orgasms.\n",
+		check: function() {
+			return [4,5,6,7].includes(State.active.variables.player.perversion.guardian) && playerCode.isButtslut();
+		}
+	},
+	GuardianFuta: {
+		id: "GuardianFuta",
+		name: "GuardianFuta",
+		image: "",
+		imagePack: "dream",
+		imagePack_final: "dream x",
+		hasPassage: true,
+		active: true,
+		once: false,
+		chance: 10,
+		highestStartPriority: 0,
+		description: "",
+		check: function() {
+			return [4,5,6,7].includes(State.active.variables.player.perversion.guardian) && State.active.variables.kinkAllow.futa;
+		}
+	},
 	WannabeWoman: {
 		id: "WannabeWoman",
 		name: "Dream WannabeWoman",

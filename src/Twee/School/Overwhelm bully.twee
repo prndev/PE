@@ -1,0 +1,7 @@
+:: Overwhelm bully
+
+
+
+<<set $player.daringFlag.overwhelmBully to true>>\
+/* NOTE: This path leaves the stun gun in the inventory */\
+[[Go to class]]

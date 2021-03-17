@@ -146,6 +146,8 @@
 		<<case 1>>plant a deep kiss on the tip of the fake penis, licking it gently...
 		<<case 2>>take the tip of the fake cock in your mouth, sucking gently. Bracing yourself, you take it deeper, and deeper, deeper...
 	<</switch>></div>\
-	
+
+<<elseif $scene eq "GuardianFuta">>\
+	<<display "Dream Guardian Futa">>\
 <<endif>>\
 <div class="delayed_text_fast">[[Sleep|Good morning][window.timeCode.newDay()]]</div>\

@@ -23,14 +23,18 @@ window.timeCode={
 		return (time.day * 1440 + time.hour * 60 + time.minute);
 	},
 	addMinutes: function(minutes) {
+		this.timedEffects(minutes, 0);
 		var time=State.active.variables.time;
 		time.minute+=minutes;
 		while (time.minute >= 60) {
-			this.addHours(1);
+			this.addHours(1, true);
 			time.minute-=60;
 		}
 	},
-	addHours: function(hours) {
+	addHours: function(hours, ignoreEffects) {
+		if (!ignoreEffects) {
+			this.timedEffects(0, hours);
+		}
 		var time=State.active.variables.time;
 		time.hour+=hours;
 		while (time.hour >= 24) {
@@ -232,6 +236,13 @@ window.timeCode={
 			}
 		} else {
 			return "It's the weekend, so no school today.";
+		}
+	},
+	timedEffects: function(minutes, hours) {
+		if (playerCode.isWearing(itemsC.buttPlugVibro) && playerCode.masturbate.isReady()) {
+			let horn = minutes + hours*60;
+			console.log(`timedEffects: ${minutes}, ${minutes} → ${horn}`);
+			playerCode.changeArousal(horn);
 		}
 	}
 }
