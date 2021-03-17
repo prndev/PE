@@ -1,0 +1,107 @@
+:: Dream game maid
+\
+<<set _c=playerCode.isWearingOn(itemTypes.Chastity)>>\
+<<set _u=playerCode.isWearingOn(itemTypes.Underwear)>>\
+\
+You are on maid wakeup duty.\
+<<if not $minigames.dreamgame.playedToday>>\
+	<<set $minigames.dreamgame.playedToday = true>>\
+	Carefully, you enter $guardian's room. It is dimly lit and $guardian is fast asleep. You vividly recall the first time you did this. You snuck up unto $guardian,\
+	<<if $flags.dreamgameCaughtWin>>\
+		and made her orgasm in her sleep. You cannot help but to feel proud of yourself. She liked it so much she now officially wants to be woken by your skilled fingers.\
+	<<else>>\
+		and groped her, but she did not actually experience an orgasm. You really want to do better this time.\
+	<<endif>>\
+<<else>>\
+	You kneel beside $guardian, who is sleeping in her bed.
+<<endif>>\
+
+<<if window.dreamMinigame.isAwake()>>\
+	<<if $minigames.dreamgame.win>>\
+		$guardian's eyes flutter open at the same time as her sphincter clenches around your probing finger. Her deep breaths turn into a series of satisfied moans. <<if playerCode.isHorny()>>Seeing her like this gets you hot and bothered as well.<<endif>> She looks at you with dreamy eyes while she basks in the throes of orgasm. As it winds down, her eyes focus on you. You carefully withdraw your finger.
+		
+		<<if _c>>\
+			@@.guardian;"Good morning to you, too."@@ $guardian smiles and stretches.
+			
+			<<if not _u>>\
+				You rise. Not wearing underwear, $guardian has a clear view under your maid skirt.\
+				<<if playerCode.isNotHorny()>>\
+					Your flaccid penis comfortably rests inside its cage. You are such an obedient maid, even masturbating $guardian does not arouse you. Like an alarm-clock, you could be a tool without any sexuality.
+					
+					@@.guardian;"No sign of an erection. You are so good at keeping it professional, my perfect little maid."@@ $guardian nods in acknowledgement.
+				<<elseif playerCode.isHalfHorny()>>\
+					The chastity cage sucessfully suppresses your erection. With your penis locked away and useless, you do not seem to be much more than an alarm-clock.
+					
+					@@.guardian;"I like how your useless clit still tries to stand up in the morning. But not today, I guess."@@ $guardian says with a smirk. 
+				<<else>>\
+					Your penis strains hard inside the confines of the chastity cage, desperately trying to get free.
+					
+					@@.guardian;"This is the closest you have ever been to fucking a woman and yet you are not getting any."@@ $guardian says with a smirk. 
+					
+					Playfully, she taps the your cage with the tip of her finger.\
+					<<if playerCode.masturbate.sinceLastCum() >= 14*24*60>>\
+						This is enough to send you over the edge. You have not had an orgasm in weeks. All the pent-up desire spontaneously erupts through the opening of your cage. Your whole body trembles uncontrollably as you slump on the floor. 
+						
+						@@.guardian;"Look at you. A single touch of mine can make you cum."@@ $guardian laughs. @@.guardian;"Better clean that up while I get dressed. And don't forget the breakfast."@@
+						<<set playerCode.masturbate.cum()>>\
+					<<else>>\
+						The sensation sends shivers all over your body.
+					<<endif>>\
+				<<endif>>\
+			<<endif>>\
+		<<else>>\
+			Too late you notice that your erection has lifted up your maid skirt, completely exposed at full mast.
+		
+			@@.guardian;"What the?!"@@ Her smile turns into a scowl. @@.guardian;"Get that nasty thing out of my face. The first thing I want to see in the morning is an obedient maid on duty, not this <<if $kinkAllow.sph>>pathetic little excuse of an<<else>><<endif>> alarm cock. Go get your chastity cage and lock yourself up at once."@@
+			
+			Obediently, you do as she says.\
+			<<set $player.masturbationType = 0>> /* after this incident, guardian should not mention filmed masturbation during breakfast */
+			<<wearClothing 'chastityDevice'>>\
+			<<set $flags.chastityLocked=true>>\
+		<<endif>>\
+	<<else>>\
+		$guardian grunts and shifts as she wakes up.
+	
+		@@.guardian;"How many times do I need to tell you? You are supposed to wake me up « sensually » as in « gently give me an orgasm » not « poke me until I wake up ».@@\
+		<<if not _c>>\
+			@@.guardian;And you are not even wearing your chastity device. How dare you have an erection in my bedroom whilst I am asleep?! Onto your hands and knees right now!"@@ she bellows.
+			
+			You do as you are told and assume the position. Your maid skirt does not even fully conceal your exposed butt. $guardian spanks your bare ass with utmost satisfaction.
+			
+			@@.red;*THWACK*@@
+			
+			With every strike you remember that you not only failed to wake her up in the intended manner. It was also plain stupid to forget putting on the chastity cage.
+			
+			@@.red;*THWACK*@@
+			
+			Finally, $guardian deems your punishment over. Your erection has long gone down and your cheeks burn bright red.
+			
+			@@.guardian;"Now go get your chastity cage."@@
+			<<wearClothing 'chastityDevice'>>\
+			<<set $flags.chastityLocked=true>>\
+			
+			Obediently, you scurry to your room to grab it. As you return with the device, $guardian has risen from her bed. She yawns and stretches, then she yanks the cage out of your trembling hands and unceremonially installs it on your penis. She is purposefully not gentle, the caging becoming part of the punishment. She takes special satisfaction from locking your cage<<if $flags.guardianTeacherTalk and $flags.chastityKey>>, knowing fully well that you cannot unlock it prior to friday after school<<endif>>.
+			
+			@@.guardian;"Actually, giving a careless maid a good spanking is also a good way to start the day. However, since\
+		<<else>>\
+			@@.guardian;Since@@\
+		<<endif>>\
+		@@.guardian;you are unwilling to satisfy me, you are not getting any relief, either.@@\
+		<<if playerCode.owns(itemsC.vibrator)>>\
+			<<if $flags.confiscatedVibrator>>\
+				@@.guardian;I already confiscated your vibrator. Better learn how to wake me properly if you ever want to have it back.@@\
+			<<else>>\
+				@@.guardian;I am taking away your vibrator."@@\
+			<<set $flags.confiscatedVibrator to true>>\
+			<<endif>>\
+		<<endif>>\
+		@@.guardian;Dismissed."@@\
+		<<set $player.masturbationType = 0>> /* after this incident, guardian should not mention filmed masturbation during breakfast */
+	<<endif>>\
+	
+	[[Prepare breakfast|Have breakfast]]
+<<else>>\
+	<<DreamGame>>
+<<endif>>\
+
+
