@@ -38,7 +38,7 @@ She waits while you run your trembling fingers over your face, collecting every 
 	@@.reward;You earned $<<print _choreJS.reward>>!@@
 <<endif>>\
 <<set $player.money+=_choreJS.reward>>\
-<<set $time.addMinutes(_choreJS.minutes)>>\
+<<set window.timeCode.addMinutes(_choreJS.minutes)>>\
 <<set _choreV.dayPerformed to $time.day>>\
 
 [[Recover|Go to bedroom]]

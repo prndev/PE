@@ -17,5 +17,5 @@ Popping up from the booth he gives you a final wave and then jogs out the door. 
 <<endif>>
 <<set $player.ending.comportment.partners.jogger.numOfDates +=1>>\
 <<set $tasksTeacher.goOnDate.status = 2>>\
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<display [[Travel]]>>

@@ -74,7 +74,7 @@
 <<if $player.perversion.guardianCooldown lt 100>>\
 <<set $player.perversion.guardianCooldown++>>\
 <<endif>>\
-<<if ($time.weekDay() eq 2)>>\
+<<if (window.timeCode.weekDay() eq 2)>>\
 	<<set window.teacherCode.updateSeverity($player.punishments.penalty)>>\
 	<<set $player.punishments.penalty = $player.punishments.penaltyMonday>>\
 	<<set $player.punishments.penaltyMonday = 0>>\

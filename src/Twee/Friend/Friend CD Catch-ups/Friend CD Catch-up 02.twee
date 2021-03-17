@@ -70,4 +70,4 @@
 
 	<<set $player.perversion.friend =6>>\
 <<endif>>\
-[[Leave friend's house][$time.addMinutes(90)]]
+[[Leave friend's house][window.timeCode.addMinutes(90)]]

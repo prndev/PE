@@ -88,7 +88,7 @@
 
 	[[Hang Out|Friend Hang Out]]
 
-	[[Leave friend's house][$time.addMinutes(15)]]
+	[[Leave friend's house][window.timeCode.addMinutes(15)]]
 <<else>>\
 	<<set $friendG.wordlessGoodbye to false>>\
 	[[Leave friend's house]]

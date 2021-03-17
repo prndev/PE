@@ -155,7 +155,7 @@
 	<<endif>>\
 <<endif>>\
 
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<if ($tasksTeacher.cleanLounge.status eq 1)>>\
 	<<set $tasksTeacher.cleanLounge.status = 2>>\
 <<endif>>\

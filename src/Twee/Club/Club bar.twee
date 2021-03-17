@@ -4,7 +4,7 @@
 <<elseif $time.hour >= 23>>\
 	It is getting late, so with heavy sigh you get ready to go home.
 	
-	[[Leave the club and go home|Go to bedroom][$time.addMinutes(30)]]
+	[[Leave the club and go home|Go to bedroom][window.timeCode.addMinutes(30)]]
 <<elseif $scene eq "mainBar">>\
 	A short, half-wall divider separates the club’s bar and ultra-lounge from the main club, giving it at least a slightly more intimate feeling, even if it’s no less noisy. After all, both areas share the same overhead space.
 
@@ -38,7 +38,7 @@
 
 	You sip the drink. It’s well mixed, but it’s still made from the cheap stuff. Still, there’s just enough mixer and ice in it to cover most of the harsher liquor. You feel a pleasant warming feeling as it goes down.
 
-	[[You finish your drink|Club bar][$scene="mainBar"; $time.addMinutes(10); $player.drunk+=5]]
+	[[You finish your drink|Club bar][$scene="mainBar"; window.timeCode.addMinutes(10); $player.drunk+=5]]
 <<elseif $scene eq "regularCocktail">>\
 	The bartender nods and promptly goes to the lighted back shelf to get supplies for your cocktail.\
 	<<selectScene TheClubBar_1 RND2RND>>\
@@ -118,7 +118,7 @@
 		As you sip the drink, you find it perfectly mixed and delicious. It hides its alcohol extremely well, aside from a little warming as you drink it.
 	<</selectScene>>\
 	
-	[[You finish your drink|Club bar][$scene="mainBar"; $time.addMinutes(10); $player.drunk+=10]]
+	[[You finish your drink|Club bar][$scene="mainBar"; window.timeCode.addMinutes(10); $player.drunk+=10]]
 <<elseif $scene eq "doubleCocktail">>\
 	You order a double cocktail, requesting a little extra be added to the drink. He nods, and gets right to work. However, as your bartender mixes up the drink, he sets up a little trick on the counter.
 
@@ -231,5 +231,5 @@
 	Your drink is delicious and the alcohol is well concealed under the flavor. However, you can definitely feel a little heat as it settles in your stomach.
 	<</selectScene>>\
 	
-	[[You finish your drink|Club bar][$scene="mainBar"; $time.addMinutes(10); $player.drunk+=15]]
+	[[You finish your drink|Club bar][$scene="mainBar"; window.timeCode.addMinutes(10); $player.drunk+=15]]
 <<endif>>\

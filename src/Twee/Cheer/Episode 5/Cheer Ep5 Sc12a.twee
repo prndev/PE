@@ -45,7 +45,7 @@ You read the list, realizing your homework is cut out for you. Most of these mov
 Sighing, you keep walking to your destination.
 
 <<set $cheerleaders.progress = 5>>\
-<<set $time.addMinutes(75)>>\
+<<set window.timeCode.addMinutes(75)>>\
 <<set $player.fitness += 1>>\
 <<set $cheerleaders.canPractice to false>>\
 <<display [[Travel]]>>

@@ -36,7 +36,7 @@ Or so you think. Completely lost in your lust, you ride the dildo. You let your 
 Exhausted, you give your legs some rest, impaling yourself on the huge stallion toy one last time. You feel a sense of pride because you managed to take its entire length. You trace the bulge in your belly with your fingers. It is not actually what you are feeling with your body, but rather knowing you actually do this what makes you feel kinky. You rest for a couple of minutes, simply enjoying the fullness in your butt. Only then you find the strength to rise yourself from the dildo. You wince as the flared head brushes past your prostate on its way out. You let the blunt end pop free with great satisfaction.
 
 <<if $player.perversion.guardian gte 4>>\
-    <<set $player.masturbationType = 14>>/* guardian notices horse dildo usage */\
+    <<set $player.masturbationType = {tool: "HorseDildo", orgasm: "anal"}>>\/* guardian notices horse dildo usage */\
 	<<if $tasksEmail.WebcamHorseCock.status gte 2>>\
         /* this shares variables with the normal horse cock mail request for now */\
         <<set $tasksEmail.WebcamHorseCock.status = 3>>\

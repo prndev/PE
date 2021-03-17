@@ -54,4 +54,4 @@ Rachel sighs and turns to you. @@.cheerCaptain;“Ashley pulls a lot of shit, bu
 
 @@.cheerFriend;“Well, I guess I better get going too,”@@ $cheerFriend.name says as she helps you up. She waves goodbye, leaving you alone on the practice field.
 
-[[Go home|Cheer Ep7 Sc5][$time.addMinutes(90); $player.location = "home"]]
+[[Go home|Cheer Ep7 Sc5][window.timeCode.addMinutes(90); $player.location = "home"]]

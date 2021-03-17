@@ -16,4 +16,4 @@ Reaching out with fingers, you cautiously slide open the drawer and there, in an
 
 If your heart was racing before, it’s threatening to burst from your chest now. You can sense the rolled-up panties pressing against your upper thigh, and you know you just did a bad thing. @@.reward;But, now you have a cute girl's pair of panties!@@
 
-<<print '[[Wait for '+$friend+'|Friend Chapter 1-5][$time.addMinutes(10);$friendG.snoop=2]]'>> 
+<<print '[[Wait for '+$friend+'|Friend Chapter 1-5][window.timeCode.addMinutes(10);$friendG.snoop=2]]'>> 

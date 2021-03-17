@@ -246,7 +246,7 @@
 	
 	<<set playerCode.masturbate.tempRelief(9)>>\
 <<endif>>\
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<if ($tasksTeacher.rewardTeam.status eq 1)>>\
 	<<set $tasksTeacher.rewardTeam.status = 2>>\
 <<endif>>\

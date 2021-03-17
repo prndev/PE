@@ -132,7 +132,7 @@
 		
 		Without stopping, you rush outside and go home.
 		
-		[[Go home|Go to bedroom][$time.addMinutes(30)]]
+		[[Go home|Go to bedroom][window.timeCode.addMinutes(30)]]
 	<<elseif _item>>\
 		<<set $flags.secondBuyFemale = true>>\
 		The cashier glances at the <<print _item.name.toLowerCase()>> and turns to you, lifting an eyebrow. Remembering your last, awkward attempt at a cover story, you wisely choose to remain silent this time. \
@@ -735,7 +735,7 @@
 
 			   @@.heroT;“Cotton panties?”@@
 
-			   <<print '<<click "Enter the shop">><<set $toggleStoreMenu to 0>><<set $shoppedBefore to 1>><<replace "#mall">><<itemSelector ' + 5 + '>><</replace>><<set $time.addMinutes(5)>><<updateTime>><</click>>'>>
+			   <<print '<<click "Enter the shop">><<set $toggleStoreMenu to 0>><<set $shoppedBefore to 1>><<replace "#mall">><<itemSelector ' + 5 + '>><</replace>><<set window.timeCode.addMinutes(5)>><<updateTime>><</click>>'>>
 
 			   [[Return to the mall | Go to the mall][$toggleStoreMenu = false]]
 		   <<else>>\

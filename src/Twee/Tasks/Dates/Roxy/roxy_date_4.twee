@@ -26,7 +26,7 @@
 	
 	<<set $player.ending.comportment.partners.roxy.numOfDates +=1>>\
 	<<set $tasksTeacher.goOnDate.status = 2>>\
-	<<set $time.addMinutes(60)>>\
+	<<set window.timeCode.addMinutes(60)>>\
 	[[Go to bedroom]]
 <<else>>\
 	As embarrassed as you may be at your “date” spending so much time flirting with the waiter, you don’t have the courage to actually speak up, meekly sitting as Roxy goes so far as to rub her leg up against the waiter as he busses your table.

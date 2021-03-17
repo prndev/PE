@@ -349,5 +349,5 @@
 	<<set $player.jobs.fastfoodPerversion++>>\
 <<endif>>\
 <<set $time.hour=16>>\
-<<set $time.addMinutes(15)>>\
+<<set window.timeCode.addMinutes(15)>>\
 <<display [[Travel]]>>\

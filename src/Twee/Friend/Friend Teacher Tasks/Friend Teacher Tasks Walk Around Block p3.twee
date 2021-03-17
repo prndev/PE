@@ -68,6 +68,6 @@ You change with a shrug, your heart still racing from your latest adventure and 
 <<endif>>\
 <<set $tasksTeacher.crossdressAroundBlock.status = 2>>\
 <<set $tasksTeacher.crossdressAroundBlock.progress++>>\
-<<run $time.addMinutes(120)>>\
+<<run window.timeCode.addMinutes(120)>>\
 <<set $friendG.wordlessGoodbye to true>>\
 <<display [[Leave friend's house]]>>

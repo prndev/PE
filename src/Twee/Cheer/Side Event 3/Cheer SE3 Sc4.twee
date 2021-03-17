@@ -156,5 +156,5 @@ The librarian interrupts with a loud @@.femvoice4;“Ssssh!”@@
 
 <<set $cheerFriend.currentSE = 0>>\
 <<set $cheerFriend.progress +=1>>\
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<display [[Travel]]>>

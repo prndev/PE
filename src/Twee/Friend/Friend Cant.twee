@@ -34,5 +34,5 @@ After the outburst, $friend goes a little quiet and takes a huge gulp of drink. 
 
 @@.hero;Am I comfortable sharing with $friend? It'd be nice not to have to go through all this alone, and this might be my only chance to be honest. Maybe $friendG.he_she can help...@@
 
-[[Sorry I just can’t, I need to go|Leave friend's house][$time.addMinutes(80);]]
+[[Sorry I just can’t, I need to go|Leave friend's house][window.timeCode.addMinutes(80);]]
 [[Admit what’s wrong|Friend Admit][$player.perversion.friend=4;]]

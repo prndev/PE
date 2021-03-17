@@ -1,7 +1,7 @@
 :: Car racing video game [pos_2256_2476]
 \
 <div style="float: right; margin: 10px;"><<RandomImageFromPack "Car Racing" 350 350>></div>\	
-<<set $time.addMinutes(20)>>\
+<<set window.timeCode.addMinutes(20)>>\
 <<set $player.money-=1>>\
 <<set _result = "none">>\
 You sit down in a multi-player rally car racing game.

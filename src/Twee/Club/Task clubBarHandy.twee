@@ -409,5 +409,5 @@
 
 	You stop to catch your breath. After a couple of minutes, you do, but you can’t pull it together enough to go back in. You decide to call it a night.
 
-	[[Head for home|Go to bedroom][$tasksTeacher.clubBarHandy.status=3; $time.addMinutes(60); $scene="hoome"]]
+	[[Head for home|Go to bedroom][$tasksTeacher.clubBarHandy.status=3; window.timeCode.addMinutes(60); $scene="hoome"]]
 <<endif>>\

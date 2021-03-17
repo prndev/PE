@@ -137,7 +137,7 @@
 	Glancing up, you see that the episode is almost over. Embarrassed and humiliated, you hurry out of the room as the credits start to play, thankful that you are able to make your exit in the dark before the rest of the club notices your presence.
 <</switch>>\
 
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<if ($tasksTeacher.animeClub.status eq 1)>>\
 	<<set $tasksTeacher.animeClub.status = 2>>\
 <<endif>>\

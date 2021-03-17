@@ -27,9 +27,9 @@ At home, you pick out the freshest looking condoms from your bag and store them 
 	<<if (not $flags.guardianCondomsAsk)>>\
 	It's been slim pickings, and you're forced to put all of the condoms, including the leaky ones, into the kitchen cum box for the morning.  Then you wash your hands for an eternity.
 	<<endif>>\
-<<set $time.addMinutes(30)>>\
+<<set window.timeCode.addMinutes(30)>>\
 <<endif>>\
-<<set $time.addMinutes(30)>>\
+<<set window.timeCode.addMinutes(30)>>\
 <<set $flags.guardianCondomsDone = true>>\
 
 [[Go to your bedroom|Go to bedroom]]

@@ -15,5 +15,5 @@ You stand on $friend's doorstep, the breeze blowing around your <<if not _stock>
 
 <<set $friendG.evilFriend +=1>>\
 <<set $friendG.noUnderwear = 2>>\
-<<set $time.addMinutes(90)>>\
+<<set window.timeCode.addMinutes(90)>>\
 <<display [[Travel]]>>

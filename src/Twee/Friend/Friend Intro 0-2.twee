@@ -39,4 +39,4 @@ With one last look at the pool, you both head back inside and upstairs. You avoi
 
 @@.heroT;“If $myguardian will let me,”@@ you mumble. Then again, with how busy she has been recently, she probably wouldn’t even notice you were gone. 
 
-[[Go to the bedroom|Friend Intro 0-3][$time.addMinutes(10)]]
+[[Go to the bedroom|Friend Intro 0-3][window.timeCode.addMinutes(10)]]

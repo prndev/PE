@@ -2,7 +2,7 @@
 \
 <div style="float: right; margin: 10px;"><<RandomImageFromPack "Basketball" 350 350>></div>\	
 <<set $player.money-=1>>\
-<<set $time.addMinutes(5)>>\
+<<set window.timeCode.addMinutes(5)>>\
 You put a dollar into the game and start shooting.
 
 <<set _roll to random(50)>>\

@@ -84,7 +84,7 @@ $friend opens the door for you to collect your stuff, kissing your cheek before 
 <<if $player.perversion.friend < 7>>\
 	<<set $player.perversion.friend = 7>>\
 <<endif>>\
-<<run $time.addMinutes(90)>>\
+<<run window.timeCode.addMinutes(90)>>\
 <<set $player.heelsSkill == $player.heelsSkill + 1>>\
 <<set playerCode.changeArousal(30)>>\
 <<set $friendG.tasks.practiceHeels = true>>\

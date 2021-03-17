@@ -47,7 +47,7 @@
 
 	/*<<set $tasksTeacher.trialChastity.text.checkMe.reminder = "You completed the trial, now you should return the device to the shop.">>*/\
 <<endif>>\
-<<if $kinkAllow.penisShrink and $flags.penisShrinkSleep and ($flags.penisShrinkProgress gte 1) and ($body.penisShrink eq 1) and $time.weekDay() eq 5>>\
+<<if $kinkAllow.penisShrink and $flags.penisShrinkSleep and ($flags.penisShrinkProgress gte 1) and ($body.penisShrink eq 1) and window.timeCode.weekDay() eq 5>>\
 	<<set $flags.penisShrinkSleep = false>>\
 	<<set $therapistTalks.talkPenisShrinkingEnd.start = true>>\
 	<<set _tt=10>>\

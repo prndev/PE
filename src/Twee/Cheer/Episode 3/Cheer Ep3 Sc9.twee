@@ -38,7 +38,7 @@ You stammer, thrown off by the realization that, for the first time in your life
 You check your bags, then exit the gym. Thankfully, the rain has stopped, and rays of sun are breaking through the clouds. You sigh pleasantly and begin the walk home, daydreaming about your future with $cheerFriend.name and the squad.
 
 <<set $cheerleaders.progress = 3>>\
-<<set $time.addMinutes(75)>>\
+<<set window.timeCode.addMinutes(75)>>\
 <<set $player.fitness += 1>>\
 <<set $cheerleaders.canPractice to false>>\
 \

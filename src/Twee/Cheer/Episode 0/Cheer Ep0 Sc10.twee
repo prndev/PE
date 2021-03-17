@@ -12,6 +12,6 @@ Her voice returns to a more chipper tone. @@.cheerCaptain;“Good. I expect to s
 
 Rachel walks off, leaving you on the ground. Once your muscles finally recover, you go grab your book bag.
 
-<<set $time.addMinutes(75)>>\
+<<set window.timeCode.addMinutes(75)>>\
 <<set $cheerleaders.progress++>>\
 <<display [[Travel]]>>

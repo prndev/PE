@@ -2072,7 +2072,7 @@
 		<<endif>>\
 	<<endif>>\
 	<<set $player.punishments.refusedToPay = false>>\
-	<<set $time.addMinutes(30)>>\
+	<<set window.timeCode.addMinutes(30)>>\
 	<<if $cheerFriend.currentSE > 0 && $cheerFriend.currentSE != 5 && $cheerFriend.currentSE != 9>>\
 		<<print "[[Go meet "+$cheerFriend.name+"|Meet cheerFriend]]">>
 	<<else>>\

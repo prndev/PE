@@ -18,7 +18,7 @@
 
 	With a pang of envy, you wish you could get that kind of money for such cushy work.
 
-	<<set $time.addHours(3)>>\
+	<<set window.timeCode.addHours(3)>>\
 	<<set $player.money+=$workRate>>\
 	@@.reward;You earned $<<print[$workRate]>>!@@
 
@@ -31,7 +31,7 @@
 
 	At the cashier counter, you see the girl once more. She avoids making eye contact with you as she collects at least triple your pay, again.
 
-	<<set $time.addHours(3)>>\
+	<<set window.timeCode.addHours(3)>>\
 	<<set $player.money+=$workRate>>\
 	@@.reward;You earned $<<print[$workRate]>>!@@
 
@@ -71,7 +71,7 @@
 	
 	<<endif>>\
 
-	<<set $time.addHours($random.stored)>>\
+	<<set window.timeCode.addHours($random.stored)>>\
 	[[Return to lobby|Go to clinic]]
 	<<display [[Travel]]>>
 <<elseif ($player.perversion.guardian lte 6) and (not $flags.guardianCumDrink)>>\
@@ -81,7 +81,7 @@ $Guardian sends you to the "perverts' wing" where wealthy patients recover from 
 	<<set $player.money+=$workRate*4>>\
 	@@.reward;You earned $<<print $workRate*4>>!@@
 	
-	<<set $time.addHours($random.stored)>>\
+	<<set window.timeCode.addHours($random.stored)>>\
 	[[Return to lobby|Go to clinic]]
 	<<display [[Travel]]>>
 <<else>>\
@@ -96,7 +96,7 @@ Your jaw hurts after so much work, and it's dubious whether this a legitimate jo
 	<<set $player.money+=$workRate*5>>\
 	@@.reward;You earned $<<print $workRate*5>>!@@
 
-	<<set $time.addHours($random.stored)>>\
+	<<set window.timeCode.addHours($random.stored)>>\
 	[[Return to lobby|Go to clinic]]
 	<<display [[Travel]]>>
 <<endif>>\

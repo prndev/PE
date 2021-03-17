@@ -22,7 +22,7 @@
 	
 	<<set $friendG.wordlessGoodbye = true>>\
 	<<set $friendG.friendTaskFrustration += 3>>\
-	[[Leave friend's house][$time.addMinutes(90)]]
+	[[Leave friend's house][window.timeCode.addMinutes(90)]]
 <<elseif not _outer.female>>\
 	<<include [[Friend Hang Out]]>>\
 <<else>>\
@@ -193,5 +193,5 @@
 	<<addToInv corset 63>>\
 	<<addToInv gString 64>>\
 	<<addToInv highHeel3 72>>\
-	[[Leave friend's house][$time.addMinutes(90)]]
+	[[Leave friend's house][window.timeCode.addMinutes(90)]]
 <<endif>>

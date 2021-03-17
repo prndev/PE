@@ -4,7 +4,7 @@ You shove the paper into your pocket.  Ashley may want you to learn the cheer, b
 You sigh deeply and start trudging towards your house, already dreading what Ashley has planned for you tomorrow.
 
 <<set $cheerleaders.progress = 5>>\
-<<set $time.addMinutes(75)>>\
+<<set window.timeCode.addMinutes(75)>>\
 <<set $player.fitness += 1>>\
 <<set $cheerleaders.canPractice to false>>\
 <<display [[Travel]]>>\

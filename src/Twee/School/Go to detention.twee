@@ -18,7 +18,7 @@ You go to the detention room. $teacher is waiting for you.
 		<<endif>>\
 	<<endif>>\
 	<<set $player.punishments.refusedToPay = false>>\
-	<<set $time.addMinutes(30)>>\
+	<<set window.timeCode.addMinutes(30)>>\
 	<<if $cheerFriend.currentSE > 0 && $cheerFriend.currentSE != 5 && $cheerFriend.currentSE != 9>>\
 		<<print "[[Go meet "+$cheerFriend.name+"|Meet cheerFriend]]">>
 	<<else>>\
@@ -28,6 +28,6 @@ You go to the detention room. $teacher is waiting for you.
 		<<display [[Travel]]>>\
 	<<endif>>\
 <<else>>\
-	[[Do as you're told|Finish school][$time.addMinutes(30);$detentionSkip = true]]
+	[[Do as you're told|Finish school][window.timeCode.addMinutes(30);$detentionSkip = true]]
 <<endif>>
 

@@ -2,7 +2,7 @@
 \
 <<if $scene eq "peep">>\
 	<div style="float: right; margin: 10px;"><<RandomImageFromPack "Keyhole" 400 400>></div>\	
-	<<set $time.addMinutes(5)>>\
+	<<set window.timeCode.addMinutes(5)>>\
 	<<if not $flags.bathroomPeep>>\
 		<<set $flags.bathroomPeep to true>>\
 		The bathroom door originally had an old-style lock with a big key. When your parents bought the house they installed a modern, lockable door knob, but the old keyhole remains.

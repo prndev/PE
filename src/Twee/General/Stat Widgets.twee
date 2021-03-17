@@ -1303,7 +1303,7 @@
 	<<endif>>\
 	
 	<<if $player.perversion.guardian eq 0>>\
-	[[Guard perv 0 to 1|Good morning][$time.addHours(24);$player.perversion.guardianCooldown=1;$player.perversion.guardian++]] \
+	[[Guard perv 0 to 1|Good morning][window.timeCode.addHours(24);$player.perversion.guardianCooldown=1;$player.perversion.guardian++]] \
 	<<elseif $player.perversion.guardian eq 1>>\
 	[[Guard perv 1 to 2|Good morning][$flags.dreamgameCaught=true]] \
 	<<elseif $player.perversion.guardian eq 2>>\
@@ -1346,7 +1346,7 @@
 	
 	<<print '<<click " +500$ ">><<set $player.money+=500>><<updateDebug>><</click>>'>> $player.money\
 		
-	<<print '<<click " Skip day ">><<set $time.addHours(24)>><<display "Daily resets">><<updateDebug>><</click>>'>> $time.day\
+	<<print '<<click " Skip day ">><<set window.timeCode.addHours(24)>><<display "Daily resets">><<updateDebug>><</click>>'>> $time.day\
 		
 	<<print '<<click " +Daring ">><<set $player.daring++>><<updateDebug>><</click>>'>> $player.daring\
 	, slb=<<print playerCode.slutScoreBasic()>>\

@@ -111,7 +111,7 @@ You look at her, confused. Her voice gets deadly serious.
 	Rachel walks off, leaving you on the ground. Once your muscles finally recover, you go grab your book bag.
 	
 	<<set $cheerleaders.fakeName = $player.name>>\
-	<<set $time.addMinutes(75)>>\
+	<<set window.timeCode.addMinutes(75)>>\
 	<<set $cheerleaders.progress++>>\
 	<<display [[Travel]]>>
 <<else>>\

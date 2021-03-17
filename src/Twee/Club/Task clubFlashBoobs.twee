@@ -93,7 +93,7 @@
 
 		@@.clubDJ;“Hey, that was really fun, you nutty little nudie show,”@@ she says happily. @@.clubDJ;“Come on back and see me anytime!”@@
 
-		[[Head back to the dance floor|Club dance floor][$scene="danceFloor"; $tasksTeacher.clubFlashBoobs.status=2; $body.boobsNoticedDJ=2; $time.addMinutes(15)]]
+		[[Head back to the dance floor|Club dance floor][$scene="danceFloor"; $tasksTeacher.clubFlashBoobs.status=2; $body.boobsNoticedDJ=2; window.timeCode.addMinutes(15)]]
 	<<elseif $body.boobs eq 3>>\
 		You’re surprised to feel a pair of hands wrapping around your torso, their girly fingers coming to rest by enclosing a full handful of each of your breasts. The arms you are suddenly in belong to the DJ, and she begins to knead your boobs with gusto, making little circles with her thumb and pointer finger to let your nipples peek through. You gasp in surprise, but the crowd’s delighted response rises and you suddenly find your body frozen to the spot in base fear – but also intense arousal.
 
@@ -119,7 +119,7 @@
 
 		@@.clubDJ;“That was fabulous, you wild, little titty-waver!”@@ the DJ laughs. @@.clubDJ;“Come up to my booth again, sometime!”@@
 
-		[[Head back to the dance floor|Club dance floor][$scene="danceFloor"; $tasksTeacher.clubFlashBoobs.status=2; $body.boobsNoticedDJ=3; $time.addMinutes(15)]]
+		[[Head back to the dance floor|Club dance floor][$scene="danceFloor"; $tasksTeacher.clubFlashBoobs.status=2; $body.boobsNoticedDJ=3; window.timeCode.addMinutes(15)]]
 	<<else>>\
 		You suddenly notice a pair of unfamiliar hands snaking around your torso from behind. At your front, the dainty fingers that belong to them take your big breasts firmly in hand like lumps of bread dough. You spot the slim, girly body of the DJ in the corner of your eye just before she presses into your back. Before you can do anything about it, you feel your boobs being lifted and bounced in her palms, drawing huge responsive applause, whistling and catcalling from the whole club floor. 
 
@@ -147,6 +147,6 @@
 
 		@@.clubDJ;“Hey, you insane little booby-teaser!”@@ the DJ laughs, @@.clubDJ;“You’ve gotta bring those yummy tits around my booth again, sometime.”@@
 
-		[[Head back to the dance floor|Club dance floor][$scene="danceFloor"; $tasksTeacher.clubFlashBoobs.status=2; $body.boobsNoticedDJ=4; $time.addMinutes(15)]]
+		[[Head back to the dance floor|Club dance floor][$scene="danceFloor"; $tasksTeacher.clubFlashBoobs.status=2; $body.boobsNoticedDJ=4; window.timeCode.addMinutes(15)]]
 	<<endif>>\
 <<endif>>\

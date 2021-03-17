@@ -56,4 +56,4 @@ You take the paper and snap up your bag, ensuring she can’t find anything else
 <<set $cheerleaders.progress = 7>>\
 <<set $player.fitness++>>\
 <<set $cheerleaders.flags.guardianPractice = true>>\
-[[Go to bedroom][$time.addMinutes(30)]]
+[[Go to bedroom][window.timeCode.addMinutes(30)]]

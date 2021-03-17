@@ -45,7 +45,7 @@
 			[[A lady in a sleeveless shift dress, sipping a drink next to a small cocktail table|Task clubDancePanties][$scene="ladyDress"]]
 		<<endif>>\
 
-		[[Actually, I can’t go through with this|The Club][$tasksTeacher.clubDancePanties.status=3;$time.addMinutes(10)]]
+		[[Actually, I can’t go through with this|The Club][$tasksTeacher.clubDancePanties.status=3;window.timeCode.addMinutes(10)]]
 	<<endif>>\
 <<elseif $scene eq "manInSuit">>\
 	You walk over by the guy in the polyester track suit, who is dancing as you stop nearby. You see that the crowd has given him a little space to work in, so you just watch as he dances for a bit. 
@@ -115,9 +115,9 @@
 	Crushed, you rush away through the crowd, tears gathering at the corners of your eyes.
 	
 	<<if $tasksTeacher.clubDancePanties.progress eq 0>>\
-		[[Run out of the club|Task clubDancePanties][$scene="runAway"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=1;$time.addMinutes(30)]]
+		[[Run out of the club|Task clubDancePanties][$scene="runAway"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=1;window.timeCode.addMinutes(30)]]
 	<<else>>\
-		[[Retreat to the ladies room|Task clubDancePanties][$scene="runAwayRestroom"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=1;$time.addMinutes(5)]]
+		[[Retreat to the ladies room|Task clubDancePanties][$scene="runAwayRestroom"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=1;window.timeCode.addMinutes(5)]]
 	<<endif>>\
 <<elseif $scene eq "girlTubeDress">>\
 	You walk across the dance floor to the tattooed girl you spotted. 
@@ -191,9 +191,9 @@
 	Mortified, you rush away through the crowd, tears gathering at the corners of your eyes.
 	
 	<<if $tasksTeacher.clubDancePanties.progress eq 0>>\
-		[[Run out of the club|Task clubDancePanties][$scene="runAway"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=2;$time.addMinutes(30)]]
+		[[Run out of the club|Task clubDancePanties][$scene="runAway"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=2;window.timeCode.addMinutes(30)]]
 	<<else>>\
-		[[Retreat to the ladies room|Task clubDancePanties][$scene="runAwayRestroom"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=2;$time.addMinutes(5)]]
+		[[Retreat to the ladies room|Task clubDancePanties][$scene="runAwayRestroom"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=2;window.timeCode.addMinutes(5)]]
 	<<endif>>\
 <<elseif $scene eq "guyTopTank">>\
 	You walk across the club floor, keeping your bearings on the guy wearing the tank top and dancing like he doesn’t have a care in the world. His whole relaxed demeanor makes you feel slightly better about what you’ve got to do, even though you are fighting back a tidal wave of nerves.
@@ -247,9 +247,9 @@
 	Your residual thoughts about how good it felt to be led on the dancefloor leave you in deep confusion, adding sting to your embarrassment.
 
 	<<if $tasksTeacher.clubDancePanties.progress eq 0>>\
-		[[Run out of the club|Task clubDancePanties][$scene="runAway"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=4;$time.addMinutes(30)]]
+		[[Run out of the club|Task clubDancePanties][$scene="runAway"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=4;window.timeCode.addMinutes(30)]]
 	<<else>>\
-		[[Retreat to the ladies room|Task clubDancePanties][$scene="runAwayRestroom"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=4;$time.addMinutes(5)]]
+		[[Retreat to the ladies room|Task clubDancePanties][$scene="runAwayRestroom"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=4;window.timeCode.addMinutes(5)]]
 	<<endif>>\
 <<elseif $scene eq "ladyDress">>\
 	You cross the dance floor, keeping an eye on the lady in the sleeveless dress standing alone by a small, circular cocktail table. She seems focused on her own thoughts as she slowly nurses a ruby-hued drink from a long-stemmed martini glass.
@@ -361,9 +361,9 @@
 	You take a couple of awkward steps back, and make a run for it.
 
 	<<if $tasksTeacher.clubDancePanties.progress eq 0>>\
-		[[Run out of the club|Task clubDancePanties][$scene="runAway"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=8;$time.addMinutes(30)]]
+		[[Run out of the club|Task clubDancePanties][$scene="runAway"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=8;window.timeCode.addMinutes(30)]]
 	<<else>>\
-		[[Retreat to the ladies room|Task clubDancePanties][$scene="runAwayRestroom"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=8;$time.addMinutes(5)]]
+		[[Retreat to the ladies room|Task clubDancePanties][$scene="runAwayRestroom"; $tasksTeacher.clubDancePanties.status=2; $tasksTeacher.clubDancePanties.progress+=8;window.timeCode.addMinutes(5)]]
 	<<endif>>\
 <<elseif $scene eq "runAwayRestroom" or $scene eq "runAway">>\
 	<<set _panties=false>>\

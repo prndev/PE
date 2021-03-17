@@ -49,7 +49,7 @@ The mention of your own uniform and a place on the team steels your resolve. Not
     <<set $player.fitness +=1>>\
 <<endif>>\
 <<set $cheerleaders.progress = 2>>\
-<<set $time.addMinutes(60)>>\
+<<set window.timeCode.addMinutes(60)>>\
 <<set $cheerleaders.canPractice to false>>\
 
 <<display [[Travel]]>>

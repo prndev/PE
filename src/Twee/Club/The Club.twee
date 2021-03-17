@@ -31,7 +31,7 @@
 	<<if ($time.hour >= 23) or ($time.hour < 7)>>\
 		It is getting late, so with heavy sigh you get ready to go home.
 		
-		[[Leave the club and go home|Go to bedroom][$time.addMinutes(30)]]
+		[[Leave the club and go home|Go to bedroom][window.timeCode.addMinutes(30)]]
 	<<else>>\
 		[[Go out on the dance floor|Club dance floor][$scene="danceFloor"]]
 		[[Head over to the bar|Club bar][$scene="mainBar"]]

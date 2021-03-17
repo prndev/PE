@@ -172,5 +172,5 @@ You both remain silent on the death-defying drive home. You distract yourself by
 	<<set $player.perversion.friend = 6>>\
 <<endif>>\
 \
-<<run $time.addMinutes(120)>>\
+<<run window.timeCode.addMinutes(120)>>\
 <<display [[Leave friend's house]]>>

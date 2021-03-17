@@ -157,7 +157,7 @@ Which shop would you like to visit?
 <div class="clothesDivider"></div>\
 <<for _i=0; _i lt window.stores.length; _i++>>\
 	<<if window.stores[_i].daringRequired lte $player.daring>>\
-		<<print '<<click "' + window.stores[_i].name + '">><<replace "#mall">><<itemSelector ' + _i + '>><</replace>><<set $time.addMinutes(5)>><<updateTime>><</click>>'>>
+		<<print '<<click "' + window.stores[_i].name + '">><<replace "#mall">><<itemSelector ' + _i + '>><</replace>><<set window.timeCode.addMinutes(5)>><<updateTime>><</click>>'>>
 	<<endif>>\
 <</for>>\
 <div class="clothesDivider"></div>\
@@ -190,8 +190,8 @@ The mall is closed now.
 <<if $player.debugA>>\
 <!--[[Debug restock stores|Go to the mall][$restock=[]]]-->\
 <<endif>>\
-<<if window.timeCode.isArcadeOpen()>>[[Play in the arcade][$time.addMinutes(5)]]<<else>>@@.halftransparent;Play in the arcade - closed@@<<endif>>
-[[Go to mall toilet][$time.addMinutes(10);$flags.cameraRecording to false]]
+<<if window.timeCode.isArcadeOpen()>>[[Play in the arcade][window.timeCode.addMinutes(5)]]<<else>>@@.halftransparent;Play in the arcade - closed@@<<endif>>
+[[Go to mall toilet][window.timeCode.addMinutes(10);$flags.cameraRecording to false]]
 
 <<if $flags.playgirlChastity and not $tasksTeacher.trialChastity.progress>>\
 	[[Ask about chastity devices|Task Trial chastity]]
@@ -248,12 +248,12 @@ You could try to steal the stun gun if you are desperate.
 /*
 <<if window.timeCode.haveSchool()>>\
 	<<if window.clothes.dressedSchool.check()>>\
-		[[Go to school][$time.addMinutes(15)]]
+		[[Go to school][window.timeCode.addMinutes(15)]]
 	<<else>>\
 		<<notDressed "Go to school" $reason.dressedSchool>>
 	<<endif>>\
 <<endif>>\
-[[Go home|Go to bedroom][$time.addMinutes(30)]]\
+[[Go home|Go to bedroom][window.timeCode.addMinutes(30)]]\
 */\
 <</widget>>\
 
